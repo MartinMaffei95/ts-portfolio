@@ -9,7 +9,7 @@ const LayoutComponent = ({ children }: LayoutProps) => {
     <>
       <Header />
       <div className="flex flex-col h-screen w-screen pt-20">
-        <div className="w-screen h-full ">{children}</div>
+        <div className="w-screen h-full overflow-x-hidden">{children}</div>
       </div>
     </>
   );

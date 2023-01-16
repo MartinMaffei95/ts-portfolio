@@ -7,7 +7,7 @@ export const Header = () => {
   };
   return (
     <>
-      <header className="bg-slate-600 flex justify-between h-20 w-screen fixed z-10 p-2 text-neutral-100 ">
+      <header className="fixed bg-slate-600 flex justify-between h-20 w-screen z-10 p-2 text-neutral-100 top-0">
         <div className="flex justify-center items-center">
           <p className="border-b-neutral-100 border-b-2 p-1 text-3xl">
             Martin Maffei

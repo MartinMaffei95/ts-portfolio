@@ -1,71 +1,112 @@
-import { useState, MouseEvent } from 'react';
+import { useState, MouseEvent, useEffect } from 'react';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { Course } from '../../interfaces/data.interface';
+import { CoursesModal } from '../EducationComponent/CoursesModal';
 
-const imgArr = [
-  '../public/educationImg/FormulariosReact.png',
-  '../public/educationImg/AjaxYWebSockets.jpg',
-  '../public/educationImg/ReactDesdeCero.png',
-  '../public/educationImg/UiDesing.png',
-  '../public/educationImg/ReactDesdeCero.png',
+type CarrouselProps = {
+  mobile: boolean;
+  coursesToRender: Course[] | undefined;
+};
 
-  '../public/educationImg/UiDesing.png',
-  '../public/educationImg/UiDesing.png',
-  '../public/educationImg/ReactDesdeCero.png',
+export const Carrousel = ({
+  mobile = true,
+  coursesToRender,
+}: CarrouselProps) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const handleOpenModal = (open: boolean): void => {
+    setIsOpen(open);
+  };
+  const [courseSelected, setCourseSelected] = useState<Course | undefined>();
+  const [carrouselOfCourses, setCarrouselOfCourses] = useState<
+    Course[] | undefined
+  >(coursesToRender);
+  const [actualStep, setActualStep] = useState<number>(0);
 
-  '../public/educationImg/UiDesing.png',
-];
-export const Carrousel = () => {
-  // recibe array ede imgenes y renderiza la priemra en grande y el resto
-  // en una cuadricula para selsccionar
-
-  const [visorImage, setVisorImage] = useState(
-    '../public/educationImg/FormulariosReact.png'
-  );
-  const [carrouselImages, setCarrouselImages] = useState(imgArr);
-  const [actualStep, setActualStep] = useState(0);
-  const selectImage = (e: MouseEvent<HTMLImageElement>): void => {
-    console.log(e.currentTarget.src);
-    setVisorImage(e.currentTarget.src);
+  const selectImageCourse = (e: MouseEvent<HTMLImageElement>): void => {
+    const course_id = e.currentTarget.id;
+    const course = carrouselOfCourses?.find((c) => c.id === course_id);
+    setCourseSelected(course);
+    setIsOpen(true);
   };
   const handleImage = (moveTo: string) => {
+    if (!carrouselOfCourses) return;
     switch (moveTo) {
       case 'FORWARD':
-        if (actualStep < carrouselImages.length - 1) {
+        if (actualStep < carrouselOfCourses.length - 1) {
           setActualStep(actualStep + 1);
         } else {
           setActualStep(0);
         }
-        setVisorImage(carrouselImages[actualStep]);
+        setCourseSelected(carrouselOfCourses[actualStep]);
         break;
       case 'BACKWARD':
         if (actualStep > 0) {
           setActualStep(actualStep - 1);
         } else {
-          setActualStep(carrouselImages.length - 1);
+          setActualStep(carrouselOfCourses.length - 1);
         }
-        setVisorImage(carrouselImages[actualStep]);
+        setCourseSelected(carrouselOfCourses[actualStep]);
         break;
     }
 
-    setVisorImage(carrouselImages[actualStep]);
+    setCourseSelected(carrouselOfCourses[actualStep]);
   };
-  return (
-    <div>
+
+  useEffect(() => {
+    setCarrouselOfCourses(coursesToRender);
+  }, [coursesToRender]);
+  if (mobile) {
+    return (
       <div>
-        <img className="w-36" src={visorImage || ''} />
-        <button onClick={() => handleImage('BACKWARD')}>atra</button>
-        <button onClick={() => handleImage('FORWARD')}>Sig</button>
+        <button onClick={() => handleOpenModal(true)}>Abreer</button>
+        {isOpen ? (
+          <CoursesModal handleOpen={handleOpenModal} course={courseSelected} />
+        ) : null}
+        <div className="snap-mandatory snap-x flex overflow-x-auto gap-2 rounded">
+          {carrouselOfCourses
+            ? carrouselOfCourses.map((course) => (
+                <img
+                  onClick={(e) => selectImageCourse(e)}
+                  className="snap-center w-3/4"
+                  key={course.id}
+                  id={course.id}
+                  src={course.image}
+                />
+              ))
+            : null}
+        </div>
       </div>
-      <div className="flex">
-        {carrouselImages
-          ? carrouselImages.map((imgRoute) => (
-              <img
-                onClick={(e) => selectImage(e)}
-                className="w-16"
-                src={imgRoute}
-              />
-            ))
-          : null}
+    );
+  } else {
+    return (
+      <div>
+        <div className="relative w-full flex">
+          <img className="w-full" src={courseSelected?.image || ''} />
+          <button
+            className="bg-gray-400 text-3xl p-2 rounded-full absolute  top-1/3  left-0 opacity-90"
+            onClick={() => handleImage('BACKWARD')}
+          >
+            <FaArrowLeft />
+          </button>
+          <button
+            className="bg-gray-400 text-3xl p-2 rounded-full absolute top-1/3 right-0 opacity-90"
+            onClick={() => handleImage('FORWARD')}
+          >
+            <FaArrowRight />
+          </button>
+        </div>
+        <div className="flex flex-wrap gap-2 justify-center items-center p-2">
+          {carrouselOfCourses
+            ? carrouselOfCourses.map((course) => (
+                <img
+                  onClick={(e) => selectImageCourse(e)}
+                  className="w-20"
+                  src={course.image}
+                />
+              ))
+            : null}
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
