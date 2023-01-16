@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import { Header } from './components/Header/Header';
+import EducationComponent from './components/EducationComponent/EducationComponent';
+import LayoutComponent from './components/Header/Layout/LayoutComponent';
+import HeroComponent from './components/HeroComponent/HeroComponent';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="bg-red-500">
-      <Header />
-    </div>
+    <LayoutComponent>
+      <HeroComponent />
+      <EducationComponent />
+    </LayoutComponent>
   );
 }
 

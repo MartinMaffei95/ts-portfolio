@@ -1,33 +1,39 @@
 import { useState } from 'react';
-
+import { BiDownArrow } from 'react-icons/bi';
 export const Header = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const toggleMenu = () => {
     setOpen(!open);
   };
   return (
     <>
-      <header className="bg-slate-600 flex justify-between h-16 w-screen fixed z-10 p-2">
+      <header className="bg-slate-600 flex justify-between h-20 w-screen fixed z-10 p-2 text-neutral-100 ">
         <div className="flex justify-center items-center">
-          <p className="border-b-neutral-100 border-b-2 p-1">Martin Maffei</p>
+          <p className="border-b-neutral-100 border-b-2 p-1 text-3xl">
+            Martin Maffei
+          </p>
         </div>
 
-        <div className="flex justify-center items-center">
-          <button onClick={toggleMenu}>9</button>
+        <div className="flex justify-center items-center gap-2">
+          <button onClick={toggleMenu}>
+            <BiDownArrow
+              className={`transition ease-in ${open ? 'rotate-180' : ''}`}
+            />
+          </button>
 
           <div>
-            <button className="bg-neutral-100 text-black p-2 font-bold">
+            <button className="bg-neutral-100 text-black p-2 font-bold rounded">
               Contacto
             </button>
           </div>
         </div>
       </header>
       <div
-        className={`flex absolute bg-slate-500 w-screen left-0 justify-center items-center transition-all ${
-          open ? 'top-16' : '-top-16'
+        className={`flex absolute bg-slate-500 w-screen left-0 justify-center items-center transition-all text-neutral-100 border-b-slate-600 border-b-2  ${
+          open ? 'top-20' : '-top-20'
         }`}
       >
-        <ul className="flex flex-col relative">
+        <ul className="flex flex-col relative text-xl p-2">
           <li>¿Quien soy?</li>
           <li>Formacion</li>
           <li>Proyectos</li>
