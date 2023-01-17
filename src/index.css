@@ -3,3 +3,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .title {
+    @apply text-5xl font-bold uppercase tracking-wider;
+  }
+  .section-title {
+    @apply text-4xl font-bold tracking-wider mb-4;
+  }
+  .subtitle {
+    @apply text-2xl text-neutral-100 tracking-wide;
+  }
+
+  .primary-button {
+    @apply bg-neutral-100 text-slate-900 p-2 font-bold rounded text-xl;
+  }
+
+  .ghost-button {
+    @apply p-2 border text-lg font-bold w-full border-slate-500 rounded;
+  }
+}

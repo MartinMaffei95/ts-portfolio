@@ -7,7 +7,7 @@ export const Header = () => {
   };
   return (
     <>
-      <header className="fixed bg-slate-600 flex justify-between h-20 w-screen z-10 p-2 text-neutral-100 top-0">
+      <header className="fixed bg-slate-600 flex justify-between h-20 w-screen z-50 p-2 text-neutral-100 top-0">
         <div className="flex justify-center items-center">
           <p className="border-b-neutral-100 border-b-2 p-1 text-3xl">
             Martin Maffei
@@ -22,18 +22,16 @@ export const Header = () => {
           </button>
 
           <div>
-            <button className="bg-neutral-100 text-black p-2 font-bold rounded">
-              Contacto
-            </button>
+            <button className="primary-button">Contacto</button>
           </div>
         </div>
       </header>
       <div
-        className={`flex absolute bg-slate-500 w-screen left-0 justify-center items-center transition-all text-neutral-100 border-b-slate-600 border-b-2  ${
+        className={`flex absolute bg-slate-500 w-screen left-0 justify-center items-center transition-all text-neutral-100 border-b-slate-600 border-b-2 z-40  ${
           open ? 'top-20' : '-top-20'
         }`}
       >
-        <ul className="flex flex-col relative text-xl p-2">
+        <ul className="flex flex-col relative text-xl p-2 ">
           <li>¿Quien soy?</li>
           <li>Formacion</li>
           <li>Proyectos</li>

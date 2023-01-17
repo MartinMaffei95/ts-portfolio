@@ -31,13 +31,10 @@ export const TypedText = () => {
   }, []);
 
   return (
-    <div className="text-2xl text-neutral-100 tracking-wide">
+    <div className="subtitle">
       <h3>
         {' '}
-        Soy desarrollador{' '}
-        <span className="text-5xl font-bold uppercase tracking-wider">
-          FullStack
-        </span>{' '}
+        Soy desarrollador <span className="title">FullStack</span>{' '}
       </h3>
       <p className="text-xl font-light">Cuento con experiencia en:</p>
       <span className="text-xl font-mono text-green-500" ref={text}></span>

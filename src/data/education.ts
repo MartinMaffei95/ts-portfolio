@@ -17,6 +17,7 @@ export const education = [
     image: '/educationImg/JavascriptDesdeCero.jpg',
     tags: ['Javascript', 'FrontEnd', 'DOM'],
     id: '1',
+    coursed_in: 'EDTEAM',
   },
   {
     title: 'GIt desde Cero',
@@ -42,6 +43,7 @@ export const education = [
       'Herramientas de trabajo',
     ],
     id: '2',
+    coursed_in: 'EDTEAM',
   },
   {
     title: 'Ajax desde cero',
@@ -59,6 +61,7 @@ export const education = [
     image: '/educationImg/AjaxYWebSockets.jpg',
     tags: ['Javascript', 'FrontEnd', 'BackEnd', 'API'],
     id: '3',
+    coursed_in: 'EDTEAM',
   },
   {
     title: 'Flexbox Y Grid',
@@ -76,6 +79,7 @@ export const education = [
     image: '/educationImg/Flexboxgrid.png',
     tags: ['Css', 'Diseño', 'FrontEnd', 'UX/UI'],
     id: '4',
+    coursed_in: 'EDTEAM',
   },
   {
     title: 'Introduccion al Testing',
@@ -91,6 +95,7 @@ export const education = [
     image: '/educationImg/IntroduccionAlTesting.png',
     tags: ['Testing', 'Herramientas de trabajo'],
     id: '5',
+    coursed_in: 'EDTEAM',
   },
   {
     title: 'Javascript en el Navegador',
@@ -108,6 +113,7 @@ export const education = [
     image: '/educationImg/JsenNavegador.png',
     tags: ['Javascript', 'FrontEnd', 'API', 'DOM'],
     id: '6',
+    coursed_in: 'EDTEAM',
   },
   {
     title: 'Programación orientada a objetos con JavaScript',
@@ -127,6 +133,7 @@ export const education = [
     image: '/educationImg/JsOrientadoAObjetos.png',
     tags: ['Javascript', 'FrontEnd', 'BackEnd'],
     id: '7',
+    coursed_in: 'EDTEAM',
   },
   {
     title: 'Single Page Application con JS',
@@ -140,6 +147,7 @@ export const education = [
     image: '/educationImg/JsSinglePageAplication.png',
     tags: ['Javascript', 'FrontEnd', 'DOM', 'HTML', 'CSS'],
     id: '8',
+    coursed_in: 'EDTEAM',
   },
   {
     title: 'React desde Cero',
@@ -158,6 +166,7 @@ export const education = [
     image: '/educationImg/ReactDesdeCero.png',
     tags: ['Javascript', 'FrontEnd', 'ReactJs', 'DOM', 'VirtualDOM'],
     id: '9',
+    coursed_in: 'EDTEAM',
   },
   {
     title: 'Server Side Rendering con NEXT.js',
@@ -176,6 +185,7 @@ export const education = [
     image: '/educationImg/SSRenderingConNext.jpg',
     tags: ['Javascript', 'FrontEnd', 'ReactJs', 'DOM', 'VirtualDOM', 'NEXT'],
     id: '10',
+    coursed_in: 'EDTEAM',
   },
   {
     title: 'UI Desing | Diseño de interfaces',
@@ -194,6 +204,7 @@ export const education = [
     image: '/educationImg/UiDesing.png',
     tags: ['Diseño', 'UX', 'UI', 'UX/UI', 'Herramientas de trabajo'],
     id: '11',
+    coursed_in: 'EDTEAM',
   },
   {
     title: 'NodeJs desde cero',
@@ -212,6 +223,7 @@ export const education = [
     image: '/educationImg/NodeJsDesdeCero.png',
     tags: ['Javascript', 'BackEnd', 'NodeJs', 'Servidores', 'Api'],
     id: '12',
+    coursed_in: 'EDTEAM',
   },
   {
     title: 'ExpressJs desde cero',
@@ -231,6 +243,7 @@ export const education = [
     image: '/educationImg/ExpressDesdeCero.png',
     tags: ['Javascript', 'BackEnd', 'Express', 'NodeJs', 'Servidores', 'Api'],
     id: '13',
+    coursed_in: 'EDTEAM',
   },
   {
     title: 'Formularios con React js',
@@ -248,5 +261,6 @@ export const education = [
     image: '/educationImg/FormulariosReact.png',
     tags: ['ReactJs', 'FrontEnd', 'Formularios', 'UI', 'UX/UI'],
     id: '14',
+    coursed_in: 'EDTEAM',
   },
 ];

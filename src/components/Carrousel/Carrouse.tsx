@@ -1,21 +1,19 @@
-import { useState, MouseEvent, useEffect } from 'react';
+import { useState, MouseEvent, useEffect, useContext } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import ModalContext from '../../context/Modal/ModalContext';
 import { Course } from '../../interfaces/data.interface';
-import { CoursesModal } from '../EducationComponent/CoursesModal';
 
 type CarrouselProps = {
   mobile: boolean;
   coursesToRender: Course[] | undefined;
+  // handleModal: Function;
 };
 
 export const Carrousel = ({
   mobile = true,
   coursesToRender,
 }: CarrouselProps) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const handleOpenModal = (open: boolean): void => {
-    setIsOpen(open);
-  };
+  const { toggleModal } = useContext(ModalContext);
   const [courseSelected, setCourseSelected] = useState<Course | undefined>();
   const [carrouselOfCourses, setCarrouselOfCourses] = useState<
     Course[] | undefined
@@ -26,7 +24,9 @@ export const Carrousel = ({
     const course_id = e.currentTarget.id;
     const course = carrouselOfCourses?.find((c) => c.id === course_id);
     setCourseSelected(course);
-    setIsOpen(true);
+    if (toggleModal) {
+      toggleModal({ isOpen: true, type: 'COURSE', content: course });
+    }
   };
   const handleImage = (moveTo: string) => {
     if (!carrouselOfCourses) return;
@@ -51,23 +51,18 @@ export const Carrousel = ({
 
     setCourseSelected(carrouselOfCourses[actualStep]);
   };
-
   useEffect(() => {
     setCarrouselOfCourses(coursesToRender);
   }, [coursesToRender]);
   if (mobile) {
     return (
       <div>
-        <button onClick={() => handleOpenModal(true)}>Abreer</button>
-        {isOpen ? (
-          <CoursesModal handleOpen={handleOpenModal} course={courseSelected} />
-        ) : null}
-        <div className="snap-mandatory snap-x flex overflow-x-auto gap-2 rounded">
+        <div className="snap-x snap-mandatory flex overflow-x-auto gap-2 rounded">
           {carrouselOfCourses
             ? carrouselOfCourses.map((course) => (
                 <img
                   onClick={(e) => selectImageCourse(e)}
-                  className="snap-center w-3/4"
+                  className="snap-center w-11/12"
                   key={course.id}
                   id={course.id}
                   src={course.image}
