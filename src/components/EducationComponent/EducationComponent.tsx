@@ -34,7 +34,7 @@ const EducationComponent = () => {
           actualWidth > 768 ? 'flex-row-reverse' : 'flex-col'
         } `}
       >
-        <div className="flex flex-wrap gap-4 justify-center items-center h-2/3 m-auto  ">
+        <div className="flex flex-wrap gap-4 justify-center items-center h-2/3 w-2/5 m-auto  ">
           {categories.map((cat) => (
             <div
               key={cat.name}
@@ -54,11 +54,13 @@ const EducationComponent = () => {
             </div>
           ))}
         </div>
-        {actualWidth && actualWidth > 768 ? (
-          <Carrousel coursesToRender={coursesToRender} />
-        ) : (
-          <Carrousel mobile coursesToRender={coursesToRender} />
-        )}
+        <div className="w-3/5">
+          {actualWidth && actualWidth > 768 ? (
+            <Carrousel coursesToRender={coursesToRender} />
+          ) : (
+            <Carrousel mobile coursesToRender={coursesToRender} />
+          )}
+        </div>
       </div>
     </div>
   );

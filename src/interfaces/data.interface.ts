@@ -13,6 +13,7 @@ export type Course = {
   image: string;
   tags: string[];
   certification: string;
+  url_certification: string;
   coursed_in: string;
 };
 

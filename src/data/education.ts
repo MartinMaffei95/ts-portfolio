@@ -17,6 +17,8 @@ export const education = [
     image: '/educationImg/JavascriptDesdeCero.jpg',
     tags: ['Javascript', 'FrontEnd', 'DOM'],
     id: '1',
+    url_certification: '',
+
     coursed_in: 'EDTEAM',
   },
   {
@@ -43,6 +45,8 @@ export const education = [
       'Herramientas de trabajo',
     ],
     id: '2',
+    url_certification: '',
+
     coursed_in: 'EDTEAM',
   },
   {
@@ -61,6 +65,8 @@ export const education = [
     image: '/educationImg/AjaxYWebSockets.jpg',
     tags: ['Javascript', 'FrontEnd', 'BackEnd', 'API'],
     id: '3',
+    url_certification: '',
+
     coursed_in: 'EDTEAM',
   },
   {
@@ -79,6 +85,8 @@ export const education = [
     image: '/educationImg/Flexboxgrid.png',
     tags: ['Css', 'Diseño', 'FrontEnd', 'UX/UI'],
     id: '4',
+    url_certification: '',
+
     coursed_in: 'EDTEAM',
   },
   {
@@ -95,6 +103,8 @@ export const education = [
     image: '/educationImg/IntroduccionAlTesting.png',
     tags: ['Testing', 'Herramientas de trabajo'],
     id: '5',
+    url_certification: '',
+
     coursed_in: 'EDTEAM',
   },
   {
@@ -113,6 +123,8 @@ export const education = [
     image: '/educationImg/JsenNavegador.png',
     tags: ['Javascript', 'FrontEnd', 'API', 'DOM'],
     id: '6',
+    url_certification: '',
+
     coursed_in: 'EDTEAM',
   },
   {
@@ -133,6 +145,8 @@ export const education = [
     image: '/educationImg/JsOrientadoAObjetos.png',
     tags: ['Javascript', 'FrontEnd', 'BackEnd'],
     id: '7',
+    url_certification: '',
+
     coursed_in: 'EDTEAM',
   },
   {
@@ -147,6 +161,8 @@ export const education = [
     image: '/educationImg/JsSinglePageAplication.png',
     tags: ['Javascript', 'FrontEnd', 'DOM', 'HTML', 'CSS'],
     id: '8',
+    url_certification: '',
+
     coursed_in: 'EDTEAM',
   },
   {
@@ -166,6 +182,8 @@ export const education = [
     image: '/educationImg/ReactDesdeCero.png',
     tags: ['Javascript', 'FrontEnd', 'ReactJs', 'DOM', 'VirtualDOM'],
     id: '9',
+    url_certification: '',
+
     coursed_in: 'EDTEAM',
   },
   {
@@ -185,6 +203,8 @@ export const education = [
     image: '/educationImg/SSRenderingConNext.jpg',
     tags: ['Javascript', 'FrontEnd', 'ReactJs', 'DOM', 'VirtualDOM', 'NEXT'],
     id: '10',
+    url_certification: '',
+
     coursed_in: 'EDTEAM',
   },
   {
@@ -204,6 +224,8 @@ export const education = [
     image: '/educationImg/UiDesing.png',
     tags: ['Diseño', 'UX', 'UI', 'UX/UI', 'Herramientas de trabajo'],
     id: '11',
+    url_certification: '',
+
     coursed_in: 'EDTEAM',
   },
   {
@@ -223,6 +245,8 @@ export const education = [
     image: '/educationImg/NodeJsDesdeCero.png',
     tags: ['Javascript', 'BackEnd', 'NodeJs', 'Servidores', 'Api'],
     id: '12',
+    url_certification: '',
+
     coursed_in: 'EDTEAM',
   },
   {
@@ -243,6 +267,8 @@ export const education = [
     image: '/educationImg/ExpressDesdeCero.png',
     tags: ['Javascript', 'BackEnd', 'Express', 'NodeJs', 'Servidores', 'Api'],
     id: '13',
+    url_certification: '',
+
     coursed_in: 'EDTEAM',
   },
   {
@@ -261,6 +287,27 @@ export const education = [
     image: '/educationImg/FormulariosReact.png',
     tags: ['ReactJs', 'FrontEnd', 'Formularios', 'UI', 'UX/UI'],
     id: '14',
+
+    url_certification: '',
+
     coursed_in: 'EDTEAM',
+  },
+  {
+    title: 'EFSet Certificate',
+    subtitle: 'B1 Intermediate - EF SET Score: 47',
+    skills_learned: [
+      'EF SET Score: 47',
+      'Reading Score: 48',
+      'Listening Score: 45',
+    ],
+    professor: null,
+    hours: null,
+    certification: '/certifications/efset.png',
+    type: 'COURSE',
+    image: '/educationImg/efset.png',
+    tags: ['Otros'],
+    id: '15',
+    url_certification: 'https://www.efset.org/cert/hyfw7M',
+    coursed_in: 'EFSet',
   },
 ];
