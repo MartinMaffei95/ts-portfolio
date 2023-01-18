@@ -41,16 +41,20 @@ export const ContactForm = () => {
     progress: undefined,
     theme: 'light',
   };
+  const {
+    VITE_APP_EMAILJS_SERVICE,
+    VITE_APP_EMAILJS_TEMPLATE,
+    VITE_APP_EMAILJS_USER,
+  } = import.meta.env;
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    console.log(values);
     try {
       emailjs
         .send(
-          'service_0oe7msl',
-          'template_kemb6qk',
+          VITE_APP_EMAILJS_SERVICE,
+          VITE_APP_EMAILJS_TEMPLATE,
           values,
-          'user_94OEa5I6liQW8zLBMtZDj'
+          VITE_APP_EMAILJS_USER
         )
         .then(() => {
           toast.success('Tu mensaje se envio correctamente!', toast_config);
