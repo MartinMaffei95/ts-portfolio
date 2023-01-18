@@ -22,7 +22,7 @@ export const Header = () => {
             }}
             className="flex justify-center items-center "
           >
-            <p className="border-b-neutral-100 border-b-2 p-1 text-3xl">
+            <p className="border-b-neutral-100 border-b-2 p-1 text-3xl cursor-pointer">
               Martin Maffei
             </p>
           </div>
