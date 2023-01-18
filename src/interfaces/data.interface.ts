@@ -24,6 +24,7 @@ export type Project = {
   stack_used: string[];
   other_used: string[] | null;
   url_deploy: string;
+  url_repository: string;
   img_card: string;
   img_desktop?: string;
   img_responsiveMobile?: string;

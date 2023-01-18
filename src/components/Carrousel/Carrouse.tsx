@@ -1,16 +1,16 @@
-import { useState, MouseEvent, useEffect, useContext } from 'react';
+import { useState, MouseEvent, useEffect, useContext, useMemo } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import ModalContext from '../../context/Modal/ModalContext';
 import { Course } from '../../interfaces/data.interface';
 
 type CarrouselProps = {
-  mobile: boolean;
+  mobile?: boolean;
   coursesToRender: Course[] | undefined;
   // handleModal: Function;
 };
 
 export const Carrousel = ({
-  mobile = true,
+  mobile = false,
   coursesToRender,
 }: CarrouselProps) => {
   const { toggleModal } = useContext(ModalContext);
@@ -18,6 +18,8 @@ export const Carrousel = ({
   const [carrouselOfCourses, setCarrouselOfCourses] = useState<
     Course[] | undefined
   >(coursesToRender);
+
+  const [actualImage, setActualImage] = useState('');
   const [actualStep, setActualStep] = useState<number>(0);
 
   const selectImageCourse = (e: MouseEvent<HTMLImageElement>): void => {
@@ -30,6 +32,7 @@ export const Carrousel = ({
   };
   const handleImage = (moveTo: string) => {
     if (!carrouselOfCourses) return;
+
     switch (moveTo) {
       case 'FORWARD':
         if (actualStep < carrouselOfCourses.length - 1) {
@@ -37,27 +40,38 @@ export const Carrousel = ({
         } else {
           setActualStep(0);
         }
-        setCourseSelected(carrouselOfCourses[actualStep]);
+
         break;
+
       case 'BACKWARD':
         if (actualStep > 0) {
           setActualStep(actualStep - 1);
         } else {
           setActualStep(carrouselOfCourses.length - 1);
         }
-        setCourseSelected(carrouselOfCourses[actualStep]);
+
         break;
     }
-
-    setCourseSelected(carrouselOfCourses[actualStep]);
   };
+
+  const memoVisor = useMemo(() => {
+    if (carrouselOfCourses) {
+      setCourseSelected(carrouselOfCourses[actualStep]);
+      setActualImage(carrouselOfCourses[actualStep].image);
+    }
+  }, [actualStep]);
+
   useEffect(() => {
-    setCarrouselOfCourses(coursesToRender);
+    if (coursesToRender) {
+      setCarrouselOfCourses(coursesToRender);
+      setActualImage(coursesToRender[0].image);
+    }
   }, [coursesToRender]);
+
   if (mobile) {
     return (
       <div>
-        <div className=" snap-x snap-mandatory flex overflow-x-scroll gap-2 rounded">
+        <div className="tiny-sb snap-x snap-mandatory flex overflow-x-scroll gap-2 rounded ">
           {carrouselOfCourses
             ? carrouselOfCourses.map((course) => (
                 <img
@@ -75,16 +89,16 @@ export const Carrousel = ({
   } else {
     return (
       <div>
-        <div className="relative w-full flex">
-          <img className="w-full" src={courseSelected?.image || ''} />
+        <div className="relative w-full flex ">
+          <img className="w-full" src={actualImage || ''} />
           <button
-            className="bg-gray-400 text-3xl p-2 rounded-full absolute  top-1/3  left-0 opacity-90"
+            className="bg-gray-400 text-3xl p-2 rounded-full absolute  top-2/4  left-0 opacity-90"
             onClick={() => handleImage('BACKWARD')}
           >
             <FaArrowLeft />
           </button>
           <button
-            className="bg-gray-400 text-3xl p-2 rounded-full absolute top-1/3 right-0 opacity-90"
+            className="bg-gray-400 text-3xl p-2 rounded-full absolute top-2/4 right-0 opacity-90"
             onClick={() => handleImage('FORWARD')}
           >
             <FaArrowRight />
@@ -92,15 +106,33 @@ export const Carrousel = ({
         </div>
         <div className="flex flex-wrap gap-2 justify-center items-center p-2">
           {carrouselOfCourses
-            ? carrouselOfCourses.map((course) => (
+            ? carrouselOfCourses.map((course, i) => (
                 <img
-                  onClick={(e) => selectImageCourse(e)}
+                  onClick={(e) => {
+                    setActualStep(i);
+                    setCourseSelected(course);
+                    setActualImage(course.image);
+                  }}
                   className="w-20"
                   src={course.image}
                 />
               ))
             : null}
         </div>
+        <button
+          className="primary-button w-full"
+          onClick={(e) => {
+            if (toggleModal) {
+              toggleModal({
+                isOpen: true,
+                type: 'COURSE',
+                content: courseSelected,
+              });
+            }
+          }}
+        >
+          Mas información
+        </button>
       </div>
     );
   }

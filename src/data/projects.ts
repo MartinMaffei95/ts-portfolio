@@ -10,6 +10,8 @@ export const projects: Project[] = [
     other_used: ['JWT', 'Redux', 'ReactRouterDOM'],
     url_deploy: 'https://takezoom.vercel.app/',
     img_card: '/projectImg/takeZoom/TakeZoom_cardImage.png',
+    url_repository: 'https://github.com/MartinMaffei95/reservar_web',
+
     img_desktop: '/projectImg/takeZoom/takeZoom.png',
   },
   {
@@ -20,6 +22,7 @@ export const projects: Project[] = [
     stack_used: ['NodeJs', 'Express', 'MongoDB', 'React'],
     other_used: ['JWT', 'Redux', 'ReactRouterDOM'],
     url_deploy: 'https://post-web-fe.vercel.app/',
+    url_repository: 'https://github.com/MartinMaffei95/post_web-fe',
     img_card: '/projectImg/postweb/PostWeb_cardImage.png',
     img_desktop: '/projectImg/postweb/postWeb.jpg',
   },
@@ -31,6 +34,8 @@ export const projects: Project[] = [
     stack_used: ['HTML', 'CSS', 'JavaScript'],
     other_used: null,
     url_deploy: 'https://mac-mini-landing-edteam.vercel.app/',
+    url_repository: 'https://github.com/MartinMaffei95/MacMiniLandingEDTEAM',
+
     img_card: '/projectImg/macmini/MacMini_cardImage.png',
     img_desktop: '/projectImg/macmini/mcmini.jpg',
   },
@@ -41,6 +46,7 @@ export const projects: Project[] = [
     description: 'AppWeb generadora de passwords',
     stack_used: ['HTML', 'CSS', 'JavaScript'],
     other_used: null,
+    url_repository: 'https://github.com/MartinMaffei95/passwordCreator',
     url_deploy: 'https://password-creator-silk.vercel.app/',
     img_card: '/projectImg/paswordgenerator/PassGenerator_cardImage.png',
     img_desktop: '/projectImg/paswordgenerator/PasswordGenerator.png',
@@ -52,6 +58,8 @@ export const projects: Project[] = [
     description: 'Sitio con informacion de peliculas usando MovieDB',
     stack_used: ['HTML', 'CSS', 'JavaScript', 'React'],
     other_used: null,
+    url_repository: 'https://github.com/MartinMaffei95/MovieApp',
+
     url_deploy: 'https://movie-app-gamma-seven.vercel.app/',
     img_card: '/projectImg/movieSite/MovieSite_cardImage.png',
     img_desktop: '/projectImg/movieSite/MovieSite.png',

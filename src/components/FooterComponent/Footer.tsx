@@ -11,12 +11,14 @@ const Footer = () => {
         <div className="flex justify-around  w-full basis-2/4">
           <Icon
             text="LinkedIn"
+            containerClassname="icon-module-style"
             iconSrc="/icons/linkedin.png"
             link="https://www.linkedin.com/in/martinmaffei95/"
             rel="me"
           />
           <Icon
             text="GitHub"
+            containerClassname="icon-module-style"
             iconSrc="/icons/008-github.png"
             link="https://github.com/MartinMaffei95"
             rel="me"

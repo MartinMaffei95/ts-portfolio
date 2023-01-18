@@ -17,7 +17,7 @@ const CourseContent = ({ course }: CourseContentProps) => {
     <div>
       {propCourse ? (
         <div>
-          <img src={propCourse.image} />
+          <img src={propCourse.image} className="w-full" />
           <div className="p-2">
             <h3 className="text-2xl font-bold text-center">
               {propCourse.title}

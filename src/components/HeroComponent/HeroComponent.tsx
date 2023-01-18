@@ -1,10 +1,7 @@
 import { TypedText } from '../Header/TypedText';
 const HeroComponent = () => {
   return (
-    <div
-      id="hero"
-      className="flex flex-col p-6 h-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 border-b-2 border-gray-400"
-    >
+    <div id="hero" className="section-bg ">
       <div className="">
         <TypedText />
       </div>

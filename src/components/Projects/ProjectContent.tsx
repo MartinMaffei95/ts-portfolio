@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Project } from '../../interfaces/data.interface';
 import { AiOutlineCheckCircle } from 'react-icons/ai';
+import { Icon } from '../Icon';
 
 type ProjectContentProps = {
   project: Project | undefined;
@@ -59,8 +60,28 @@ const ProjectContent = ({ project }: ProjectContentProps) => {
               Cantidad de horas:{' '}
               <span className="text-xl font-light ">{propCourse.type}</span>
             </p> */}
-            <p>Deploy: {propCourse.url_deploy}</p>
-            -ENPROGRESO-<p>Repositorio: {propCourse.url_deploy}</p>
+            <div className="flex flex-col gap-4">
+              <p>
+                <Icon
+                  text={`${propCourse.name} - Deploy`}
+                  iconSrc="/icons/008-github.png"
+                  link={propCourse.url_repository}
+                  containerClassname="text-neutral-100 flex flex-row-reverse justify-center items-center w-full bg-neutral-900 rounded gap-4 p-2"
+                  textClassname="font-bold"
+                  iconClassname="w-12"
+                />
+              </p>
+              <p>
+                <Icon
+                  text={`${propCourse.name} - Repositorio`}
+                  iconSrc="/icons/rocket.png"
+                  link={propCourse.url_deploy}
+                  containerClassname="text-neutral-100 flex flex-row-reverse justify-center items-center w-full bg-cyan-800 rounded gap-4 p-2"
+                  textClassname="font-bold"
+                  iconClassname="w-12"
+                />
+              </p>
+            </div>
           </div>
         </div>
       ) : null}
