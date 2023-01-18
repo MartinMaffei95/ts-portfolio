@@ -23,8 +23,8 @@ export const ModalContainer = () => {
       className="bg-neutral-900 bg-opacity-80 fixed top-0 left-0 w-screen h-screen max-h-screen max-w-screen min-h-screen min-w-screen z-50 p-6 overflow-hidden flex justify-center"
     >
       <div
-        className={`bg-neutral-200 flex max-h-full max-w-full min-h-full  rounded relative overflow-y-scroll overflow-hidden tiny-sb ${
-          actualWidth > 768 ? 'max-w-[65%]' : 'max-w-full'
+        className={`bg-neutral-200 flex max-h-full max-w-full min-h-full rounded relative overflow-y-scroll overflow-hidden tiny-sb ${
+          actualWidth > 768 ? 'max-w-[65%] min-w-[60%]' : 'max-w-full'
         }`}
       >
         <button

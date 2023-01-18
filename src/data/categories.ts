@@ -27,4 +27,8 @@ export const categories = [
     name: 'NodeJs',
     src: '/icons/007-nodejs.png',
   },
+  {
+    name: 'Otros',
+    src: '/icons/012-other.png',
+  },
 ];

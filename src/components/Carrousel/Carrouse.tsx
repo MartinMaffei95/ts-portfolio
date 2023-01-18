@@ -64,6 +64,7 @@ export const Carrousel = ({
   useEffect(() => {
     if (coursesToRender) {
       setCarrouselOfCourses(coursesToRender);
+      setCourseSelected(coursesToRender[0]);
       setActualImage(coursesToRender[0].image);
     }
   }, [coursesToRender]);
@@ -90,7 +91,10 @@ export const Carrousel = ({
     return (
       <div>
         <div className="relative w-full flex ">
-          <img className="w-full" src={actualImage || ''} />
+          <img
+            className="w-full max-h-96 object-contain"
+            src={actualImage || ''}
+          />
           <button
             className="bg-gray-400 text-3xl p-2 rounded-full absolute  top-2/4  left-0 opacity-90"
             onClick={() => handleImage('BACKWARD')}

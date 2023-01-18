@@ -8,11 +8,12 @@ export type Course = {
   title: string;
   subtitle: string;
   skills_learned: string[];
-  professor: string;
-  hours: number;
+  professor: string | null;
+  hours: number | null;
   image: string;
   tags: string[];
   certification: string;
+  url_certification: string;
   coursed_in: string;
 };
 
