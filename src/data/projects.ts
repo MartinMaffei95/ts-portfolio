@@ -10,6 +10,7 @@ export const projects: Project[] = [
     other_used: ['JWT', 'Redux', 'ReactRouterDOM'],
     url_deploy: 'https://takezoom.vercel.app/',
     img_card: '/projectImg/takeZoom/TakeZoom_cardImage.png',
+    img_desktop: '/projectImg/takeZoom/takeZoom.png',
   },
   {
     name: 'PostWeb',
@@ -20,6 +21,7 @@ export const projects: Project[] = [
     other_used: ['JWT', 'Redux', 'ReactRouterDOM'],
     url_deploy: 'https://post-web-fe.vercel.app/',
     img_card: '/projectImg/postweb/PostWeb_cardImage.png',
+    img_desktop: '/projectImg/postweb/postWeb.jpg',
   },
   {
     name: 'LandingPage Mac Mini',
@@ -30,6 +32,7 @@ export const projects: Project[] = [
     other_used: null,
     url_deploy: 'https://mac-mini-landing-edteam.vercel.app/',
     img_card: '/projectImg/macmini/MacMini_cardImage.png',
+    img_desktop: '/projectImg/macmini/mcmini.jpg',
   },
   {
     name: 'Password Creator',
@@ -40,6 +43,7 @@ export const projects: Project[] = [
     other_used: null,
     url_deploy: 'https://password-creator-silk.vercel.app/',
     img_card: '/projectImg/paswordgenerator/PassGenerator_cardImage.png',
+    img_desktop: '/projectImg/paswordgenerator/PasswordGenerator.png',
   },
   {
     name: 'MovieSite',
@@ -50,6 +54,7 @@ export const projects: Project[] = [
     other_used: null,
     url_deploy: 'https://movie-app-gamma-seven.vercel.app/',
     img_card: '/projectImg/movieSite/MovieSite_cardImage.png',
+    img_desktop: '/projectImg/movieSite/MovieSite.png',
   },
   // {
   //   name: 'Go-Scrum',

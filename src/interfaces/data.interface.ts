@@ -25,9 +25,9 @@ export type Project = {
   other_used: string[] | null;
   url_deploy: string;
   img_card: string;
+  img_desktop?: string;
   img_responsiveMobile?: string;
   img_responsiveTablet?: string;
-  img_responsiveDesktop?: string;
 };
 //  nombre = 'takeZoom';
 //  shortName = 'WEB APP';

@@ -7,13 +7,32 @@ import {
 } from 'react';
 import Typed from 'typed.js';
 
+[
+  'Maqutación web',
+  'Desarrollo de vistas',
+  'Desarrollo de PWA',
+  'Front-end',
+  'Back-end',
+  'Creacion API REST',
+  'Testing manual',
+];
+
 export const TypedText = () => {
   const text = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     if (text !== null) {
       const typed = new Typed(text.current as Element, {
-        strings: ['Front-end', 'Back-end', 'Manejo de Costos'],
+        strings: [
+          'Front-end',
+          'Maqutación web',
+          'Desarrollo de vistas',
+          'Desarrollo de PWA',
+          'Back-end',
+          'Creacion API REST',
+          'QA',
+          'Testing manual',
+        ],
 
         startDelay: 100,
         typeSpeed: 70,

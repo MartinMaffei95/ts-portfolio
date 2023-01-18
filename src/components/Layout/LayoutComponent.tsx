@@ -14,7 +14,7 @@ const LayoutComponent = ({ children }: LayoutProps) => {
   return (
     <>
       <Header />
-      <div className="flex flex-col h-screen w-screen pt-20 select-none">
+      <div className="flex flex-col min-h-screen min-w-screen pt-20 select-none">
         {isOpen ? <ModalContainer /> : null}
         <div className="w-screen h-full overflow-x-hidden">{children}</div>
       </div>

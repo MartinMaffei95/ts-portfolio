@@ -21,7 +21,9 @@ const EducationComponent = () => {
   }, [category]);
   return (
     <div className="flex flex-col p-6 min-h-full bg-slate-800 border-b-2 border-gray-400">
-      <h3 className="section-title text-neutral-200">Formación</h3>
+      <h3 id="formation" className="section-title text-neutral-200">
+        Formación
+      </h3>
 
       <div className="flex flex-wrap gap-4 justify-center mt-8 mb-8">
         {categories.map((cat) => (

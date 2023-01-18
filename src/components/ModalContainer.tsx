@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef, useContext } from 'react';
-import { Course } from '../interfaces/data.interface';
+import { Course, Project } from '../interfaces/data.interface';
 import { AiOutlineClose } from 'react-icons/ai';
 import CourseContent from './EducationComponent/CoursesContent';
 import ModalContext from '../context/Modal/ModalContext';
+import ProjectContent from './Projects/ProjectContent';
 
 export const ModalContainer = () => {
   const { toggleModal, isOpen, type, content } = useContext(ModalContext);
@@ -30,7 +31,7 @@ export const ModalContainer = () => {
         {type === 'COURSE' ? (
           <CourseContent course={content as Course} />
         ) : type === 'PROJECT' ? (
-          <div></div>
+          <ProjectContent project={content as Project} />
         ) : null}
       </div>
     </div>

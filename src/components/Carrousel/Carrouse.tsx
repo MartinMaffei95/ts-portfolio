@@ -57,12 +57,12 @@ export const Carrousel = ({
   if (mobile) {
     return (
       <div>
-        <div className="snap-x snap-mandatory flex overflow-x-auto gap-2 rounded">
+        <div className=" snap-x snap-mandatory flex overflow-x-scroll gap-2 rounded">
           {carrouselOfCourses
             ? carrouselOfCourses.map((course) => (
                 <img
                   onClick={(e) => selectImageCourse(e)}
-                  className="snap-center w-11/12"
+                  className="snap-center w-11/12  max-w-full min-w-[91.666667%]"
                   key={course.id}
                   id={course.id}
                   src={course.image}
