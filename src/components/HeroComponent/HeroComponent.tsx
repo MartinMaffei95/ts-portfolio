@@ -12,7 +12,7 @@ const HeroComponent = () => {
           actualWidth > 768 ? 'w-72 h-72' : 'w-52 h-52'
         }`}
       >
-        <img src="../public/profile.png" />
+        <img src="/profile.png" />
       </div>
     </div>
   );
