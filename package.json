@@ -9,8 +9,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.10.0",
+    "emailjs-com": "^3.2.0",
+    "formik": "^2.2.9",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-fullscreen-image": "^0.0.3",
+    "react-icons": "^4.7.1",
+    "react-router-dom": "^6.6.2",
+    "react-toastify": "^9.1.1",
+    "tailwind-scrollbar": "^2.1.0",
+    "typed.js": "^2.0.12",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",
