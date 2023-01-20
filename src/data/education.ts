@@ -17,7 +17,7 @@ export const education = [
     image: '/educationImg/JavascriptDesdeCero.jpg',
     tags: ['Javascript', 'FrontEnd', 'DOM'],
     id: '1',
-    url_certification: '',
+    url_certification: '/certifications/certificad-curso-javascript.png',
 
     coursed_in: 'EDTEAM',
   },
@@ -45,7 +45,7 @@ export const education = [
       'Herramientas de trabajo',
     ],
     id: '2',
-    url_certification: '',
+    url_certification: '/certifications/certificad-curso-git.png',
 
     coursed_in: 'EDTEAM',
   },
@@ -65,7 +65,7 @@ export const education = [
     image: '/educationImg/AjaxYWebSockets.jpg',
     tags: ['Javascript', 'FrontEnd', 'BackEnd', 'API'],
     id: '3',
-    url_certification: '',
+    url_certification: '/certifications/certificad-curso-ajax-ws.png',
 
     coursed_in: 'EDTEAM',
   },
@@ -85,7 +85,7 @@ export const education = [
     image: '/educationImg/Flexboxgrid.png',
     tags: ['Css', 'Diseño', 'FrontEnd', 'UX/UI'],
     id: '4',
-    url_certification: '',
+    url_certification: '/certifications/certificad-curso-flexbox-grid.png',
 
     coursed_in: 'EDTEAM',
   },
@@ -103,7 +103,7 @@ export const education = [
     image: '/educationImg/IntroduccionAlTesting.png',
     tags: ['Testing', 'Herramientas de trabajo'],
     id: '5',
-    url_certification: '',
+    url_certification: '/certifications/certificad-curso-testing.png',
 
     coursed_in: 'EDTEAM',
   },
@@ -123,7 +123,7 @@ export const education = [
     image: '/educationImg/JsenNavegador.png',
     tags: ['Javascript', 'FrontEnd', 'API', 'DOM'],
     id: '6',
-    url_certification: '',
+    url_certification: '/certifications/certificad-curso-js-dom.png',
 
     coursed_in: 'EDTEAM',
   },
@@ -145,7 +145,7 @@ export const education = [
     image: '/educationImg/JsOrientadoAObjetos.png',
     tags: ['Javascript', 'FrontEnd', 'BackEnd'],
     id: '7',
-    url_certification: '',
+    url_certification: '/certifications/certificad-curso-js-poo.png',
 
     coursed_in: 'EDTEAM',
   },
@@ -161,7 +161,7 @@ export const education = [
     image: '/educationImg/JsSinglePageAplication.png',
     tags: ['Javascript', 'FrontEnd', 'DOM', 'HTML', 'CSS'],
     id: '8',
-    url_certification: '',
+    url_certification: '/certifications/certificad-curso-spa.png',
 
     coursed_in: 'EDTEAM',
   },
@@ -182,7 +182,7 @@ export const education = [
     image: '/educationImg/ReactDesdeCero.png',
     tags: ['Javascript', 'FrontEnd', 'ReactJs', 'DOM', 'VirtualDOM'],
     id: '9',
-    url_certification: '',
+    url_certification: '/certifications/certificad-curso-react-2021.png',
 
     coursed_in: 'EDTEAM',
   },
@@ -203,7 +203,7 @@ export const education = [
     image: '/educationImg/SSRenderingConNext.jpg',
     tags: ['Javascript', 'FrontEnd', 'ReactJs', 'DOM', 'VirtualDOM', 'NEXT'],
     id: '10',
-    url_certification: '',
+    url_certification: '/certifications/certificad-curso-next-js-2020.png',
 
     coursed_in: 'EDTEAM',
   },
@@ -224,7 +224,7 @@ export const education = [
     image: '/educationImg/UiDesing.png',
     tags: ['Diseño', 'UX', 'UI', 'UX/UI', 'Herramientas de trabajo'],
     id: '11',
-    url_certification: '',
+    url_certification: '/certifications/certificad-curso-ui-design.png',
 
     coursed_in: 'EDTEAM',
   },
@@ -245,7 +245,7 @@ export const education = [
     image: '/educationImg/NodeJsDesdeCero.png',
     tags: ['Javascript', 'BackEnd', 'NodeJs', 'Servidores', 'Api'],
     id: '12',
-    url_certification: '',
+    url_certification: '/certifications/certificad-curso-nodejs.png',
 
     coursed_in: 'EDTEAM',
   },
@@ -267,7 +267,7 @@ export const education = [
     image: '/educationImg/ExpressDesdeCero.png',
     tags: ['Javascript', 'BackEnd', 'Express', 'NodeJs', 'Servidores', 'Api'],
     id: '13',
-    url_certification: '',
+    url_certification: '/certifications/certificad-curso-express.png',
 
     coursed_in: 'EDTEAM',
   },
@@ -287,9 +287,7 @@ export const education = [
     image: '/educationImg/FormulariosReact.png',
     tags: ['ReactJs', 'FrontEnd', 'Formularios', 'UI', 'UX/UI'],
     id: '14',
-
-    url_certification: '',
-
+    url_certification: '/certifications/certificad-curso-react-formularios.png',
     coursed_in: 'EDTEAM',
   },
   {
@@ -309,5 +307,25 @@ export const education = [
     id: '15',
     url_certification: 'https://www.efset.org/cert/hyfw7M',
     coursed_in: 'EFSet',
+  },
+  {
+    title: 'Skill up - React',
+    subtitle: 'Skill up React - Nivel Intermedio',
+    skills_learned: [
+      'Formularios - Formik + Yup',
+      'Peticions HTTP Avanzadas',
+      'Redux',
+      'Responsive Design',
+      'Soft Skills',
+    ],
+    professor: null,
+    hours: null,
+    certification: '/certifications/alkemy-react-intermedio-skillup.pdf',
+    type: 'COURSE',
+    image: '/educationImg/alkemySkillUpIntermedio.jpg',
+    tags: ['Javascript', 'FrontEnd', 'ReactJs', 'DOM'],
+    id: '15',
+    url_certification: '/certifications/alkemy-react-intermedio-skillup.pdf',
+    coursed_in: 'Alkemy',
   },
 ];
