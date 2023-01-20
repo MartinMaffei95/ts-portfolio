@@ -15,10 +15,10 @@ const CourseContent = ({ course }: CourseContentProps) => {
   }, [course]);
 
   return (
-    <div>
+    <>
       {propCourse ? (
         <div>
-          <div className="flex justify-center ">
+          <div className="flex justify-center min-w-full ">
             <img src={propCourse.image} className="" />
           </div>
           <div className="p-2">
@@ -29,12 +29,12 @@ const CourseContent = ({ course }: CourseContentProps) => {
               {propCourse.subtitle}
             </p>
             {propCourse?.skills_learned ? (
-              <ul className="pl-2 pr-2 mt-2 mb-2 ml-auto mr-auto flex flex-col items-center w-2/4">
+              <ul className="pl-2 pr-2 mt-2 mb-2 ml-auto mr-auto flex flex-col items-center w-3/4">
                 <li className="text-xl font-bold text-center">-Contenido-</li>
                 {propCourse.skills_learned.map((skill) => (
-                  <li className="text-xl flex flex-row items-center gap-2 w-full ">
-                    <AiOutlineCheckCircle className="text-green-900 w-12 justify-self-start" />
-                    <span className="">{skill}</span>
+                  <li className="text-xl flex flex-row items-center gap-2 w-full">
+                    <AiOutlineCheckCircle className="text-green-900 w-12 justify-self-start basis-1/4" />
+                    <span className="basis-3/4">{skill}</span>
                   </li>
                 ))}
               </ul>
@@ -70,7 +70,7 @@ const CourseContent = ({ course }: CourseContentProps) => {
           </div>
         </div>
       ) : null}
-    </div>
+    </>
   );
 };
 

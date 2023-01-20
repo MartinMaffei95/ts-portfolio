@@ -3,6 +3,10 @@ export const categories = [
     name: 'Javascript',
     src: '/icons/004-js.png',
   },
+  {
+    name: 'Web Design',
+    src: '/icons/web-design.png',
+  },
   // {
   //   name: 'HTML',
   //   src: '/icons/001-html-5.png',

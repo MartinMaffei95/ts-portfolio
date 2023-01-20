@@ -9,7 +9,7 @@ type ProjectContentProps = {
 
 const ProjectContent = ({ project }: ProjectContentProps) => {
   const [propCourse, setPropCourse] = useState<Project | undefined>(project);
-
+  const test = false;
   useEffect(() => {
     setPropCourse(project);
   }, [project]);
@@ -56,7 +56,7 @@ const ProjectContent = ({ project }: ProjectContentProps) => {
             </div>
 
             <div className="flex flex-col gap-4">
-              <p>
+              <div>
                 <Icon
                   text={`${propCourse.name} - Deploy`}
                   iconSrc="/icons/008-github.png"
@@ -65,8 +65,8 @@ const ProjectContent = ({ project }: ProjectContentProps) => {
                   textClassname="font-bold"
                   iconClassname="w-12"
                 />
-              </p>
-              <p>
+              </div>
+              <div>
                 <Icon
                   text={`${propCourse.name} - Repositorio`}
                   iconSrc="/icons/rocket.png"
@@ -75,7 +75,19 @@ const ProjectContent = ({ project }: ProjectContentProps) => {
                   textClassname="font-bold"
                   iconClassname="w-12"
                 />
-              </p>
+              </div>
+              {test ? (
+                <div>
+                  <Icon
+                    text={`${propCourse.name} - Tests manual`}
+                    iconSrc="/icons/manual-test.png"
+                    link={propCourse.url_deploy}
+                    containerClassname="text-neutral-100 flex flex-row-reverse justify-center items-center w-full rounded gap-4 p-2 bg-yellow-600"
+                    textClassname="font-bold"
+                    iconClassname="w-12"
+                  />
+                </div>
+              ) : null}
             </div>
           </div>
         </div>
