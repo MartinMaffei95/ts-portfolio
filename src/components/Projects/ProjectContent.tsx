@@ -9,7 +9,7 @@ type ProjectContentProps = {
 
 const ProjectContent = ({ project }: ProjectContentProps) => {
   const [propCourse, setPropCourse] = useState<Project | undefined>(project);
-  const test = true;
+  const test = false;
   useEffect(() => {
     setPropCourse(project);
   }, [project]);

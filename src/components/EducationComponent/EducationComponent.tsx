@@ -58,7 +58,7 @@ const EducationComponent = () => {
             </div>
           ))}
         </div>
-        <div className={` ${actualWidth > 768 ? 'w-3/5' : ' w-full'} `}>
+        <div className={` ${actualWidth > 768 ? 'w-3/5' : ' w-full mt-4'} `}>
           {actualWidth && actualWidth > 768 ? (
             <Carrousel coursesToRender={coursesToRender} />
           ) : (
