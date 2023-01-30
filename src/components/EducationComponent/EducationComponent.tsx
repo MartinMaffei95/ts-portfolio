@@ -42,7 +42,7 @@ const EducationComponent = () => {
           {categories.map((cat) => (
             <div
               key={cat.name}
-              className={`overflow-hidden flex flex-col justify-center items-center h-24 w-24 rounded transition ${
+              className={`cursor-pointer overflow-hidden flex flex-col justify-center items-center h-24 w-24 rounded transition ${
                 category === cat.name
                   ? 'bg-slate-700 shadow-md shadow-slate-600/50 drop-shadow-md'
                   : ''

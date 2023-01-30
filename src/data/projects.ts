@@ -2,6 +2,19 @@ import { Project } from '../interfaces/data.interface';
 
 export const projects: Project[] = [
   {
+    name: 'ChallengeGD',
+    shortName: '',
+    type: 'WEB_DESIGN',
+    description: 'Challenge de frontend real',
+    stack_used: ['React', 'Typescript'],
+    other_used: ['Firebase', 'Tailwind', 'React-confetti', 'ReactRouterDom'],
+    url_repository: 'https://github.com/MartinMaffei95/challenge-greydive',
+
+    url_deploy: 'https://challenge-greydive-seven.vercel.app/',
+    img_card: '/projectImg/ChallengeGD/cellImage.png',
+    img_desktop: '/projectImg/ChallengeGD/1673038130329.png',
+  },
+  {
     name: 'TakeZoom',
     shortName: 'WEB APP M.E.R.N.',
     type: 'WEB_DESIGN',
@@ -64,6 +77,7 @@ export const projects: Project[] = [
     img_card: '/projectImg/movieSite/MovieSite_cardImage.png',
     img_desktop: '/projectImg/movieSite/MovieSite.png',
   },
+
   // {
   //   name: 'Go-Scrum',
   //   shortName: '',
