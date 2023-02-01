@@ -8,9 +8,9 @@ export const projects: Project[] = [
     description: 'Challenge de frontend real',
     stack_used: ['React', 'Typescript'],
     other_used: ['Firebase', 'Tailwind', 'React-confetti', 'ReactRouterDom'],
-    url_repository: 'https://github.com/MartinMaffei95/challenge-greydive',
+    url_repository: 'https://github.com/MartinMaffei95/challenge-gd',
 
-    url_deploy: 'https://challenge-greydive-seven.vercel.app/',
+    url_deploy: 'https://challenge-gd-seven.vercel.app/',
     img_card: '/projectImg/ChallengeGD/cellImage.png',
     img_desktop: '/projectImg/ChallengeGD/1673038130329.png',
   },
