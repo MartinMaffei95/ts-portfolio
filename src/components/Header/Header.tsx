@@ -13,8 +13,8 @@ export const Header = () => {
   const navigate = useNavigate();
   return (
     <>
-      <header className="fixed flex w-full h-20 z-50 top-0">
-        <div className="bg-slate-600 flex justify-between w-full h-full z-50 p-2 text-neutral-100">
+      <header className="fixed flex w-full h-20 z-50 top-0 ">
+        <div className="bg-slate-600 flex justify-between w-full h-full z-50 p-2 pl-10 pr-10 text-neutral-100">
           <div
             onClick={() => {
               setOpen(false);
@@ -27,16 +27,20 @@ export const Header = () => {
             </p>
           </div>
 
-          <div className="flex justify-center items-center gap-2">
+          <div className="flex justify-center items-center gap-2 hovver">
             {actualWidth > 768 ? (
-              <ul className="flex relative text-lg items-end self-end gap-2">
-                <a href="#hero" onClick={toggleMenu}>
+              <ul className="flex relative items-end self-end menu-text">
+                <a className="menu-item " href="#hero" onClick={toggleMenu}>
                   <li>¿Quien soy?</li>
                 </a>
-                <a href="#formation" onClick={toggleMenu}>
+                <a
+                  className="menu-item "
+                  href="#formation"
+                  onClick={toggleMenu}
+                >
                   <li>Formacion</li>
                 </a>
-                <a href="#projects" onClick={toggleMenu}>
+                <a className="menu-item " href="#projects" onClick={toggleMenu}>
                   <li>Proyectos</li>
                 </a>
 
@@ -57,7 +61,7 @@ export const Header = () => {
                   href="#footer"
                   onClick={toggleMenu}
                 >
-                  <li>Descargá mi cv</li>
+                  <li>Mi cv</li>
                 </a>
               </ul>
             ) : (
@@ -83,17 +87,17 @@ export const Header = () => {
         {actualWidth > 768 ? null : (
           <div
             className={`flex absolute bg-slate-500 w-screen left-0 justify-center items-center transition-all text-neutral-100 border-b-slate-600 border-b-2 z-20  ${
-              open ? 'top-20' : '-top-20'
+              open ? 'top-20' : '-top-40'
             }`}
           >
-            <ul className="flex flex-col relative text-xl p-2 ">
-              <a href="#hero" onClick={toggleMenu}>
+            <ul className="flex flex-col relative p-2 text-center menu-text">
+              <a className="menu-item " href="#hero" onClick={toggleMenu}>
                 <li>¿Quien soy?</li>
               </a>
-              <a href="#formation" onClick={toggleMenu}>
+              <a className="menu-item " href="#formation" onClick={toggleMenu}>
                 <li>Formacion</li>
               </a>
-              <a href="#projects" onClick={toggleMenu}>
+              <a className="menu-item " href="#projects" onClick={toggleMenu}>
                 <li>Proyectos</li>
               </a>
 
@@ -114,7 +118,7 @@ export const Header = () => {
                 href="#footer"
                 onClick={toggleMenu}
               >
-                <li>Descargá mi cv</li>
+                <li>Mi cv</li>
               </a>
             </ul>
           </div>

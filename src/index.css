@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Share+Tech+Mono&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -18,9 +18,14 @@
   .primary-button {
     @apply bg-neutral-100 text-slate-900 p-2 font-bold rounded text-xl;
   }
-
+  .menu-text {
+    @apply text-xl gap-4 pl-4 pr-4 uppercase tracking-wide font-bold font-dosis;
+  }
+  .menu-item {
+    @apply hover:text-neutral-300;
+  }
   .section-bg {
-    @apply flex flex-col p-6 h-full min-h-[calc(100vh-5rem)] bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 border-b-2 border-gray-400 text-neutral-100;
+    @apply flex flex-col p-10 h-full min-h-[calc(100vh-5rem)] bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 border-b-2 border-gray-400 text-neutral-100;
   }
 
   .ghost-button {
