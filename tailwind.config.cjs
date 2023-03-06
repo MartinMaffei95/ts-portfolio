@@ -5,6 +5,7 @@ module.exports = {
     fontFamily: {
       sans: ['Roboto Condensed'],
       mono: ['Share Tech Mono'],
+      dosis: ['Dosis'],
     },
 
     screens: {
