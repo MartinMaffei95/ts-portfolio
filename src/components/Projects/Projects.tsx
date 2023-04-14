@@ -117,7 +117,6 @@ export const Projects = () => {
       <h3 id="projects" className="section-title text-neutral-200">
         Mis proyectos
       </h3>
-
       <div className={`flex flex-wrap gap-4 justify-around`}>
         {allProjects
           ? allProjects.map((project, index) => (
