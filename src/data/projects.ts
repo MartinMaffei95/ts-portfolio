@@ -2,6 +2,18 @@ import { Project } from '../interfaces/data.interface';
 
 export const projects: Project[] = [
   {
+    name: 'H&D',
+    shortName: '',
+    type: 'WEB_DESIGN',
+    description: 'Landing page of decoration business',
+    stack_used: ['React', 'Typescript', 'Nextjs'],
+    other_used: ['Tailwind', 'styled-components'],
+    url_repository: 'https://github.com/MartinMaffei95/landing_home_deco',
+    url_deploy: 'https://landing-home-deco.vercel.app/',
+    img_card: '/projectImg/decoLanding/decoLanding_cardImage.png',
+    img_desktop: '/projectImg/decoLanding/decoLanding_desktop.png',
+  },
+  {
     name: 'ChallengeGD',
     shortName: '',
     type: 'WEB_DESIGN',
@@ -9,7 +21,6 @@ export const projects: Project[] = [
     stack_used: ['React', 'Typescript'],
     other_used: ['Firebase', 'Tailwind', 'React-confetti', 'ReactRouterDom'],
     url_repository: 'https://github.com/MartinMaffei95/challenge-gd',
-
     url_deploy: 'https://challenge-gd-seven.vercel.app/',
     img_card: '/projectImg/ChallengeGD/cellImage.png',
     img_desktop: '/projectImg/ChallengeGD/1673038130329.png',

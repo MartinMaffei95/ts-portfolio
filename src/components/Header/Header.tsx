@@ -1,16 +1,29 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { BiDownArrow } from 'react-icons/bi';
-import { useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useResize } from '../../Hooks/useResize';
 export const Header = () => {
+  const { state } = useLocation();
+  const { targetId } = state || {};
   const [open, setOpen] = useState(false);
   const toggleMenu = () => {
     setOpen(!open);
   };
 
+  const goTo = (url: string, section: string) => {
+    navigate(`${url}`, { state: { targetId: `${section}` } });
+    toggleMenu();
+  };
+
   const pdfLink = useRef<HTMLAnchorElement>(null!);
   const { actualWidth } = useResize();
   const navigate = useNavigate();
+  useEffect(() => {
+    const el = document.getElementById(targetId);
+    if (el) {
+      el.scrollIntoView();
+    }
+  }, [targetId]);
   return (
     <>
       <header className="fixed flex w-full h-20 z-50 top-0 ">
@@ -30,17 +43,31 @@ export const Header = () => {
           <div className="flex justify-center items-center gap-2 hovver">
             {actualWidth > 768 ? (
               <ul className="flex relative items-end self-end menu-text">
-                <a className="menu-item " href="#hero" onClick={toggleMenu}>
+                <a
+                  className="menu-item "
+                  href="/#hero"
+                  onClick={() => {
+                    goTo('/', '#hero');
+                  }}
+                >
                   <li>¿Quien soy?</li>
                 </a>
                 <a
                   className="menu-item "
                   href="#formation"
-                  onClick={toggleMenu}
+                  onClick={() => {
+                    goTo('/', '#formation');
+                  }}
                 >
                   <li>Formacion</li>
                 </a>
-                <a className="menu-item " href="#projects" onClick={toggleMenu}>
+                <a
+                  className="menu-item "
+                  href="#projects"
+                  onClick={() => {
+                    goTo('/', '#projects');
+                  }}
+                >
                   <li>Proyectos</li>
                 </a>
 
@@ -59,13 +86,19 @@ export const Header = () => {
                     pdfLink.current.click();
                   }}
                   href="#footer"
-                  onClick={toggleMenu}
+                  onClick={() => {
+                    goTo('/', '#footer');
+                  }}
                 >
                   <li>Mi cv</li>
                 </a>
               </ul>
             ) : (
-              <button onClick={toggleMenu}>
+              <button
+                onClick={() => {
+                  goTo('/', '#footer');
+                }}
+              >
                 <BiDownArrow
                   className={`transition ease-in ${open ? 'rotate-180' : ''}`}
                 />
@@ -91,13 +124,31 @@ export const Header = () => {
             }`}
           >
             <ul className="flex flex-col relative p-2 text-center menu-text">
-              <a className="menu-item " href="#hero" onClick={toggleMenu}>
+              <a
+                className="menu-item "
+                href="#hero"
+                onClick={() => {
+                  goTo('/', '#hero');
+                }}
+              >
                 <li>¿Quien soy?</li>
               </a>
-              <a className="menu-item " href="#formation" onClick={toggleMenu}>
+              <a
+                className="menu-item "
+                href="#formation"
+                onClick={() => {
+                  goTo('/', '#formation');
+                }}
+              >
                 <li>Formacion</li>
               </a>
-              <a className="menu-item " href="#projects" onClick={toggleMenu}>
+              <a
+                className="menu-item "
+                href="#projects"
+                onClick={() => {
+                  goTo('/', '#projects');
+                }}
+              >
                 <li>Proyectos</li>
               </a>
 
@@ -116,7 +167,9 @@ export const Header = () => {
                   pdfLink.current.click();
                 }}
                 href="#footer"
-                onClick={toggleMenu}
+                onClick={() => {
+                  goTo('/', '#footer');
+                }}
               >
                 <li>Mi cv</li>
               </a>
