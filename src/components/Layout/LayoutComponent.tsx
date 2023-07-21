@@ -1,16 +1,16 @@
-import { Header } from '../Header/Header';
-import { useContext } from 'react';
-import ModalContext from '../../context/Modal/ModalContext';
-import { ModalContainer } from '../ModalContainer';
+import { Header } from '../Header/Header'
+import { useContext } from 'react'
+import ModalContext from '../../context/Modal/ModalContext'
+import { ModalContainer } from '../ModalContainer'
 
 //## CONTEXT
 
 type LayoutProps = {
-  children?: JSX.Element | JSX.Element[];
-};
+  children?: JSX.Element | JSX.Element[]
+}
 
 const LayoutComponent = ({ children }: LayoutProps) => {
-  const { isOpen } = useContext(ModalContext);
+  const { isOpen } = useContext(ModalContext)
   return (
     <>
       <Header />
@@ -20,7 +20,7 @@ const LayoutComponent = ({ children }: LayoutProps) => {
         <div className="w-full h-full overflow-x-hidden">{children}</div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default LayoutComponent;
+export default LayoutComponent

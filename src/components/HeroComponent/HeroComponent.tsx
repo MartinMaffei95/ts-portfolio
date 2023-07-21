@@ -1,21 +1,28 @@
-import { useResize } from '../../Hooks/useResize';
-import { TypedText } from '../Header/TypedText';
+import { Image, Heading } from '@chakra-ui/react'
+import { useResize } from '../../Hooks/useResize'
+import { TypedText } from '../Header/TypedText'
 const HeroComponent = () => {
-  const { actualWidth } = useResize();
+  const { actualWidth } = useResize()
   return (
-    <div id="hero" className="section-bg ">
-      <div className="">
-        <TypedText />
-      </div>
-      <div
-        className={`overflow-hidden rounded-full self-end mt-auto  ${
-          actualWidth > 768 ? 'w-72 h-72' : 'w-52 h-52'
-        }`}
-      >
-        <img src="/profile.png" />
-      </div>
-    </div>
-  );
-};
+    <div
+      id="hero"
+      className="bg-neutral-400 text-black min-h-screen relative flex flex-col justify-between overflow-hidden p-4"
+    >
+      <span className="bg-yellow-400 flex h-28 w-[100vh] absolute top-0 -right-10 z-10 rotate-12 -translate-y-[50%]  " />
+      <span className="bg-yellow-400 flex h-28  w-[100vh] absolute bottom-0 -left-10 z-10 rotate-12 translate-y-[50%] " />
 
-export default HeroComponent;
+      <Heading className="font-shoulders text-7xl uppercase font-bold relative text-neutral-900 z-20">
+        Front-end developer
+      </Heading>
+
+      <Image
+        boxSize="250px"
+        objectFit="cover"
+        className="z-20 self-end rounded"
+        src="/profile.png"
+      />
+    </div>
+  )
+}
+
+export default HeroComponent

@@ -1,34 +1,36 @@
-import { useState, useEffect } from 'react';
-import { Carrousel } from '../Carrousel/Carrouse';
-import { education } from '../../data/education';
-import { categories } from '../../data/categories';
-import { Course } from '../../interfaces/data.interface';
-import { useResize } from '../../Hooks/useResize';
+import { useState, useEffect } from 'react'
+import { Carrousel } from '../Carrousel/Carrouse'
+import { education } from '../../data/education'
+import { categories } from '../../data/categories'
+import { Course } from '../../interfaces/data.interface'
+import { useResize } from '../../Hooks/useResize'
+import { Heading } from '@chakra-ui/react'
+import Section from '../Section/Section'
 const EducationComponent = () => {
   // bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700
   // console.log(education, categories);
 
-  const [category, setCategory] = useState<string>('Javascript');
+  const [category, setCategory] = useState<string>('Javascript')
   const [coursesToRender, setCouresesToRender] = useState<
     Course[] | undefined
-  >();
+  >()
 
-  const { actualWidth } = useResize();
+  const { actualWidth } = useResize()
   useEffect(() => {
     if (category) {
       const courses = education.filter((course) =>
         course.tags.includes(category)
-      );
-      setCouresesToRender(courses);
+      )
+      setCouresesToRender(courses)
     }
-  }, [category]);
+  }, [category])
   return (
-    <div
-      className={`section-bg bg-gradient-to-tr from-slate-900 via-slate-800 to-slate-700 `}
+    <Section
+    // className={`section-bg bg-gradient-to-tr from-slate-900 via-slate-800 to-slate-700 `}
     >
-      <h3 id="formation" className="section-title text-neutral-200">
+      <Heading className="font-shoulders text-4xl uppercase font-semibold relative z-20">
         Formación
-      </h3>
+      </Heading>
       <div
         className={`flex ${
           actualWidth > 768 ? 'flex-row-reverse' : 'flex-col'
@@ -48,7 +50,7 @@ const EducationComponent = () => {
                   : ''
               }`}
               onClick={() => {
-                setCategory(cat.name);
+                setCategory(cat.name)
               }}
             >
               <span className="text-xl text-gray-300 font-semibold w-full text-center">
@@ -66,8 +68,8 @@ const EducationComponent = () => {
           )}
         </div>
       </div>
-    </div>
-  );
-};
+    </Section>
+  )
+}
 
-export default EducationComponent;
+export default EducationComponent

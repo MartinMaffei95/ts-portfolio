@@ -6,6 +6,7 @@ module.exports = {
       sans: ['Roboto Condensed'],
       mono: ['Share Tech Mono'],
       dosis: ['Dosis'],
+      shoulders: ['Big Shoulders Display'],
     },
 
     screens: {
@@ -45,7 +46,7 @@ module.exports = {
     require('autoprefixer'),
     require('tailwind-scrollbar'),
   ],
-};
+}
 
 // --main-f-family: 'Roboto Condensed', sans-serif;
 // --consola-f-family: 'Share Tech Mono', monospace;
