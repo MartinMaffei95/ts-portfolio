@@ -8,6 +8,7 @@ import { Projects } from '../components/Projects/Projects';
 import waves from '../assets/svg/svg_wave.svg';
 import { Image } from '@chakra-ui/react';
 import SkillsSection from '../components/SkillsSection/SkillsSection';
+import WorkSection from '../components/WorkSection/WorkSection';
 
 export const Home = () => {
   return (
@@ -21,7 +22,11 @@ export const Home = () => {
       </div>
       {/* <EducationComponent /> */}
       <SkillsSection />
-      <Projects />
+      <div className="w-screen relative bg-neutral-300 rotate-180">
+        <Image src={waves} />
+      </div>
+      <WorkSection />
+      {/* <Projects /> */}
       <Footer />
     </>
   );

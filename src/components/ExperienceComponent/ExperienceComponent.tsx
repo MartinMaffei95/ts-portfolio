@@ -1,14 +1,21 @@
 import { FC } from 'react';
-import { Heading } from '@chakra-ui/react';
+import { Heading, Image } from '@chakra-ui/react';
 import Section from '../Section/Section';
 import { FaRegCalendarAlt } from 'react-icons/fa';
 import { BiBuildings } from 'react-icons/bi';
 import { experiences } from '../../data/experience';
 import Title from '../Title/Title';
+import topSvg from '../../assets/svg/top-corner.svg';
+
 type Props = {};
 const ExperienceComponent: FC<Props> = ({}) => {
   return (
-    <Section extraCss="bg-neutral-900   min-h-screen text-neutral-100 gap-4 flex flex-col">
+    <Section extraCss="bg-neutral-900 relative  min-h-screen text-neutral-100 gap-4 flex flex-col">
+      <Image
+        src={topSvg}
+        className="absolute left-0 top-0 w-screen z-10 mix-blend-overlay "
+      />
+
       <Title title="Experiencia" />
 
       {experiences?.map((exp, index) => (

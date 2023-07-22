@@ -40,3 +40,11 @@ export type Experience = {
   description?: string;
   job_tasks: string[];
 };
+
+export interface Work {
+  title: string;
+  description: string;
+  task_realized: string[];
+  portrait: string;
+  images: string[];
+}

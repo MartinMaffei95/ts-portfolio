@@ -4,7 +4,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useResize } from '../../Hooks/useResize';
 import { Image } from '@chakra-ui/react';
 import { BsFillFileEarmarkPersonFill } from 'react-icons/bs';
-import { FaLinkedinIn } from 'react-icons/fa';
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import Icon from '../Icon/Icon';
 
 export const Header = () => {
   const { state } = useLocation();
@@ -30,7 +31,7 @@ export const Header = () => {
   }, [targetId]);
   return (
     <>
-      <header className=" flex flex-col w-full  z-50   p-2 w-screen bg-yellow-400 w-screen">
+      <header className=" flex flex-col z-50   p-2 w-screen bg-yellow-400 w-screen">
         {/* <div className="bg-neutral-900 flex justify-between w-full h-full z-50 p-2 pl-10 pr-10 text-neutral-100">
           <div
             onClick={() => {
@@ -180,7 +181,7 @@ export const Header = () => {
             </ul>
           </div>
         )} */}
-        <div className="text-center font-poiret text-lg tracking-wider">
+        <div className="text-center  font-poiret text-lg tracking-wider">
           Martin Maffei
         </div>
         <div
@@ -188,9 +189,9 @@ export const Header = () => {
         [&>div]:w-full [&>div]:py-2 [&>div]:border-black [&>div]:border-t [&>div]:border-b [&>div]:flex [&>div]:justify-center"
         >
           <div>
-            <div className="bg-neutral-200 flex p-2 text-lg shadow shadow-neutral-400  rounded-full text-neutral-800">
+            <Icon>
               <BsFillFileEarmarkPersonFill />
-            </div>
+            </Icon>
           </div>
           <Image
             boxSize="80px"
@@ -199,10 +200,13 @@ export const Header = () => {
             className="z-20 self-end rounded-full aspect-square"
             src="/profile.png"
           />
-          <div>
-            <div className="bg-neutral-200 flex p-2 text-lg shadow shadow-neutral-400 rounded-full text-neutral-800">
+          <div className=" flex gap-2">
+            <Icon>
               <FaLinkedinIn />
-            </div>
+            </Icon>
+            <Icon>
+              <FaGithub />
+            </Icon>
           </div>
         </div>
       </header>
