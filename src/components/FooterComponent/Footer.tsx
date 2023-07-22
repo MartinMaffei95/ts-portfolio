@@ -6,13 +6,13 @@ import Icon from '../Icon/Icon';
 
 const Footer = () => {
   return (
-    <Section extraCss="bg-yellow-400 text-base flex flex-col gap-4">
+    <Section extraCss="bg-yellow-400 text-base flex flex-col gap-4 relative">
       <Title
         firstLetterClassName=""
-        restOfTextClassName="border-b-neutral-900 border-b-4 border-t-4 pr-1 border-neutral-900"
+        restOfTextClassName="border-b-neutral-900 border-b-4  border-t-4 pr-1 border-neutral-900"
         title="Contacto"
       />
-      <div className="flex gap-2 w-full justify-around items-center">
+      <div className="flex gap-2 w-full justify-around bg-yellow-400 items-center">
         <Icon>
           <FaLinkedinIn />
         </Icon>

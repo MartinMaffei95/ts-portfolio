@@ -2,10 +2,12 @@ import React from 'react';
 import Section from '../Section/Section';
 import Title from '../Title/Title';
 import { works } from '../../data/work';
+import steps from '../../assets/svg/steps-layered.svg';
+import { Image } from '@chakra-ui/react';
 
 const WorkSection = () => {
   return (
-    <Section extraCss="bg-neutral-900 text-neutral-100 flex flex-col gap-4 pb-8">
+    <Section extraCss="bg-neutral-900 text-neutral-100 flex flex-col gap-4 ">
       <Title title="Ultimos trabajos" />
       {works?.slice(0, 3).map((job, index) => (
         <>
