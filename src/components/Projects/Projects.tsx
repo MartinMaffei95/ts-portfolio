@@ -4,6 +4,8 @@ import { projects } from '../../data/projects';
 import { BsHexagonFill } from 'react-icons/bs';
 import ModalContext from '../../context/Modal/ModalContext';
 import { useResize } from '../../Hooks/useResize';
+import Section from '../Section/Section';
+import Title from '../Title/Title';
 type ProjectCardProps = {
   project: Project;
   flexDirectionReverse?: boolean;
@@ -113,20 +115,18 @@ export const ProjectCard = ({
 export const Projects = () => {
   const [allProjects, setAllProjects] = useState<Project[]>(projects);
   return (
-    <div className="section-bg bg-gradient-to-b from-slate-900 via-slate-800 to-slate-700  text-slate-900">
-      <h3 id="projects" className="section-title text-neutral-200">
-        Mis proyectos
-      </h3>
+    <Section extraCss="bg-neutral-900 text-neutral-100">
+      <Title title="Mis proyectos" />
       <div className={`flex flex-wrap gap-4 justify-around`}>
-        {allProjects
+        {/* {allProjects
           ? allProjects.map((project, index) => (
               <ProjectCard
                 project={project}
                 flexDirectionReverse={index % 2 === 0 ? true : false}
               />
             ))
-          : null}
+          : null} */}
       </div>
-    </div>
+    </Section>
   );
 };

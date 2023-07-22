@@ -34,7 +34,7 @@ const EducationComponent = () => {
       </div>
 
       <div className={`flex flex-col`}>
-        <div className="bg-green-800 gap-2 grid grid-cols-2 ">
+        <div className="bg-green-800 gap-2 grid grid-cols-2gi ">
           {categories.map((cat) => (
             <button
               key={cat.name}
