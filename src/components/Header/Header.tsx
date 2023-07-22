@@ -1,37 +1,41 @@
-import { useEffect, useRef, useState } from 'react'
-import { BiDownArrow } from 'react-icons/bi'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { useResize } from '../../Hooks/useResize'
+import { useEffect, useRef, useState } from 'react';
+import { BiDownArrow } from 'react-icons/bi';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useResize } from '../../Hooks/useResize';
+import { Image } from '@chakra-ui/react';
+import { BsFillFileEarmarkPersonFill } from 'react-icons/bs';
+import { FaLinkedinIn } from 'react-icons/fa';
+
 export const Header = () => {
-  const { state } = useLocation()
-  const { targetId } = state || {}
-  const [open, setOpen] = useState(false)
+  const { state } = useLocation();
+  const { targetId } = state || {};
+  const [open, setOpen] = useState(false);
   const toggleMenu = () => {
-    setOpen(!open)
-  }
+    setOpen(!open);
+  };
 
   const goTo = (url: string, section: string) => {
-    navigate(`${url}`, { state: { targetId: `${section}` } })
-    toggleMenu()
-  }
+    navigate(`${url}`, { state: { targetId: `${section}` } });
+    toggleMenu();
+  };
 
-  const pdfLink = useRef<HTMLAnchorElement>(null!)
-  const { actualWidth } = useResize()
-  const navigate = useNavigate()
+  const pdfLink = useRef<HTMLAnchorElement>(null!);
+  const { actualWidth } = useResize();
+  const navigate = useNavigate();
   useEffect(() => {
-    const el = document.getElementById(targetId)
+    const el = document.getElementById(targetId);
     if (el) {
-      el.scrollIntoView()
+      el.scrollIntoView();
     }
-  }, [targetId])
+  }, [targetId]);
   return (
     <>
-      <header className="fixed flex w-full h-20 z-50 top-0 ">
-        <div className="bg-neutral-900 flex justify-between w-full h-full z-50 p-2 pl-10 pr-10 text-neutral-100">
+      <header className=" flex flex-col w-full  z-50   p-2 w-screen bg-yellow-400 w-screen">
+        {/* <div className="bg-neutral-900 flex justify-between w-full h-full z-50 p-2 pl-10 pr-10 text-neutral-100">
           <div
             onClick={() => {
-              setOpen(false)
-              navigate('/')
+              setOpen(false);
+              navigate('/');
             }}
             className="flex justify-center items-center "
           >
@@ -47,7 +51,7 @@ export const Header = () => {
                   className="menu-item "
                   href="/#hero"
                   onClick={() => {
-                    goTo('/', '#hero')
+                    goTo('/', '#hero');
                   }}
                 >
                   <li>¿Quien soy?</li>
@@ -56,7 +60,7 @@ export const Header = () => {
                   className="menu-item "
                   href="#formation"
                   onClick={() => {
-                    goTo('/', '#formation')
+                    goTo('/', '#formation');
                   }}
                 >
                   <li>Formacion</li>
@@ -65,7 +69,7 @@ export const Header = () => {
                   className="menu-item "
                   href="#projects"
                   onClick={() => {
-                    goTo('/', '#projects')
+                    goTo('/', '#projects');
                   }}
                 >
                   <li>Proyectos</li>
@@ -83,11 +87,11 @@ export const Header = () => {
 
                 <a
                   onClickCapture={() => {
-                    pdfLink.current.click()
+                    pdfLink.current.click();
                   }}
                   href="#footer"
                   onClick={() => {
-                    goTo('/', '#footer')
+                    goTo('/', '#footer');
                   }}
                 >
                   <li>Mi cv</li>
@@ -96,7 +100,7 @@ export const Header = () => {
             ) : (
               <button
                 onClick={() => {
-                  goTo('/', '#footer')
+                  goTo('/', '#footer');
                 }}
               >
                 <BiDownArrow
@@ -108,7 +112,7 @@ export const Header = () => {
             <div>
               <button
                 onClick={() => {
-                  navigate('contact')
+                  navigate('contact');
                 }}
                 className="primary-button"
               >
@@ -128,7 +132,7 @@ export const Header = () => {
                 className="menu-item "
                 href="#hero"
                 onClick={() => {
-                  goTo('/', '#hero')
+                  goTo('/', '#hero');
                 }}
               >
                 <li>¿Quien soy?</li>
@@ -137,7 +141,7 @@ export const Header = () => {
                 className="menu-item "
                 href="#formation"
                 onClick={() => {
-                  goTo('/', '#formation')
+                  goTo('/', '#formation');
                 }}
               >
                 <li>Formacion</li>
@@ -146,7 +150,7 @@ export const Header = () => {
                 className="menu-item "
                 href="#projects"
                 onClick={() => {
-                  goTo('/', '#projects')
+                  goTo('/', '#projects');
                 }}
               >
                 <li>Proyectos</li>
@@ -164,19 +168,44 @@ export const Header = () => {
 
               <a
                 onClickCapture={() => {
-                  pdfLink.current.click()
+                  pdfLink.current.click();
                 }}
                 href="#footer"
                 onClick={() => {
-                  goTo('/', '#footer')
+                  goTo('/', '#footer');
                 }}
               >
                 <li>Mi cv</li>
               </a>
             </ul>
           </div>
-        )}
+        )} */}
+        <div className="text-center font-poiret text-lg tracking-wider">
+          Martin Maffei
+        </div>
+        <div
+          className=" flex justify-center items-center gap-2 w-full text-2xl 
+        [&>div]:w-full [&>div]:py-2 [&>div]:border-black [&>div]:border-t [&>div]:border-b [&>div]:flex [&>div]:justify-center"
+        >
+          <div>
+            <div className="bg-neutral-200 flex p-2 text-lg shadow shadow-neutral-400  rounded-full text-neutral-800">
+              <BsFillFileEarmarkPersonFill />
+            </div>
+          </div>
+          <Image
+            boxSize="80px"
+            objectFit="cover"
+            objectPosition="top"
+            className="z-20 self-end rounded-full aspect-square"
+            src="/profile.png"
+          />
+          <div>
+            <div className="bg-neutral-200 flex p-2 text-lg shadow shadow-neutral-400 rounded-full text-neutral-800">
+              <FaLinkedinIn />
+            </div>
+          </div>
+        </div>
       </header>
     </>
-  )
-}
+  );
+};
