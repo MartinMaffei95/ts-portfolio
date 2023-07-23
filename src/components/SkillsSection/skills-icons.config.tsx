@@ -1,5 +1,6 @@
 import { FaNodeJs, FaReact } from 'react-icons/fa';
 import {
+  SiChakraui,
   SiExpress,
   SiMongodb,
   SiNestjs,
@@ -9,6 +10,7 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from 'react-icons/si';
+import { SiMaterialui } from 'react-icons/si';
 import { TbBrandNextjs } from 'react-icons/tb';
 
 type SkillIcon = {
@@ -102,6 +104,7 @@ export const skillIcons: SkillIconClass[] = [
     hover_toColor: 'hover:to-neutral-100',
     hover_borderColor: 'hover:border-blue-800',
     hover_gradient: 'bg-gradient-to-tr',
+    row_span: 'md:row-span-2',
   }),
   new SkillIconClass({
     icon: <SiTailwindcss className="text-6xl font-bold" />,
@@ -111,6 +114,7 @@ export const skillIcons: SkillIconClass[] = [
     hover_toColor: 'hover:to-blue-400',
     hover_borderColor: 'hover:border-blue-800',
     hover_gradient: 'bg-gradient-to-tr',
+    row_span: 'md:row-span-2',
   }),
 
   new SkillIconClass({
@@ -129,6 +133,24 @@ export const skillIcons: SkillIconClass[] = [
     hover_fromColor: 'hover:from-purple-400',
     hover_toColor: 'hover:to-purple-400',
     hover_borderColor: 'hover:border-purple-800',
+    hover_gradient: 'bg-gradient-to-tr',
+  }),
+  new SkillIconClass({
+    icon: <SiChakraui className="text-6xl font-bold" />,
+    skillName: 'ChakraUI',
+    hover_iconColor: 'hover:text-teal-100',
+    hover_fromColor: 'hover:from-teal-600',
+    hover_toColor: 'hover:to-cyan-400',
+    hover_borderColor: 'hover:border-cyan-800',
+    hover_gradient: 'bg-gradient-to-tr',
+  }),
+  new SkillIconClass({
+    icon: <SiMaterialui className="text-6xl font-bold" />,
+    skillName: 'Material UI',
+    hover_iconColor: 'hover:text-neutral-100',
+    hover_fromColor: 'hover:from-blue-600',
+    hover_toColor: 'hover:to-blue-500',
+    hover_borderColor: 'hover:border-cyan-800',
     hover_gradient: 'bg-gradient-to-tr',
   }),
   new SkillIconClass({
@@ -168,7 +190,7 @@ export const skillIcons: SkillIconClass[] = [
     hover_toColor: 'hover:to-green-400',
     hover_borderColor: 'hover:border-green-800',
     hover_gradient: 'bg-gradient-to-tr',
-    row_span: 'row-span-2',
+    row_span: 'row-span-2 md:row-span-1',
   }),
   new SkillIconClass({
     icon: <SiExpress className="text-6xl font-bold" />,
@@ -178,7 +200,7 @@ export const skillIcons: SkillIconClass[] = [
     hover_toColor: 'hover:to-green-400',
     hover_borderColor: 'hover:border-green-800',
     hover_gradient: 'bg-gradient-to-tr',
-    row_span: 'row-span-2',
+    row_span: 'row-span-2 md:row-span-1',
   }),
 
   new SkillIconClass({
