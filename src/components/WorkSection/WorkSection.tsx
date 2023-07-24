@@ -34,7 +34,7 @@ const WorkSection = () => {
           </>
         ))}
         <Show above="md">
-          <div className="text-xl bg-neutral-900 md:bg-neutral-700 md:rounded-md md:p-4">
+          <div className="text-xl md:rounded-md md:p-4 flex items-center justify-center">
             Ver Todo
           </div>
         </Show>

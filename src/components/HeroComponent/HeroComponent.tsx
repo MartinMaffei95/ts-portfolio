@@ -29,7 +29,7 @@ const HeroComponent = () => {
           Front-end developer
         </Heading>
 
-        <span className="flex self-center w-full h-[2px] rounded bg-yellow-400 " />
+        <span className="flex  z-10 self-center w-full h-[2px] rounded bg-yellow-700 " />
         <p className="z-10 tracking-wider leading-relaxed">
           Soy un apasionado desarrollador Full Stack especializado en el
           desarrollo Front-end. Mi experiencia se centra en la creación de
@@ -79,7 +79,7 @@ const Stat = ({ label, statNumber, helpText, col, row }: Props) => {
     <GridItem
       gridColumn={col}
       gridRow={row}
-      className="flex flex-col  p-2 rounded  bg-neutral-200 bg-opacity-50 border-2 "
+      className="flex flex-col  p-2 rounded shadow-inner shadow-neutral-100 bg-neutral-200 bg-opacity-50 "
     >
       <p className="font-poiret  flex items-baseline justify-center gap-1 ">
         <span className="text-6xl font-shoulders">{statNumber}</span>
