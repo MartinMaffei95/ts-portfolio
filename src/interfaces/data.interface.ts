@@ -31,13 +31,20 @@ export type Project = {
   img_responsiveMobile?: string;
   img_responsiveTablet?: string;
 };
-//  nombre = 'takeZoom';
-//  shortName = 'WEB APP';
-//  type = 'WEB_DESIGN';
-//  descr = 'App para reservar espacios comunes de nuestro edificio';
-//  tecUtil = 'NodeJs,Express,JWT,MongoDB,React,Redux,ReactRouterDOM';
-//  url = 'https://takezoom.vercel.app/';
-//  img_card = '/designImages/takeZoom.png';
-//  img_responsiveMobile = '';
-//  img_responsiveTablet = '';
-//  img_responsiveDesktop = '';
+
+export type Experience = {
+  position: string;
+  company_name: string;
+  init_date: string;
+  end_date: string;
+  description?: string;
+  job_tasks: string[];
+};
+
+export interface Work {
+  title: string;
+  description: string;
+  task_realized: string[];
+  portrait: string;
+  images: string[];
+}

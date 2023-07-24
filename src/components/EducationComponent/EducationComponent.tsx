@@ -4,6 +4,9 @@ import { education } from '../../data/education';
 import { categories } from '../../data/categories';
 import { Course } from '../../interfaces/data.interface';
 import { useResize } from '../../Hooks/useResize';
+import { Heading } from '@chakra-ui/react';
+import Section from '../Section/Section';
+import Title from '../Title/Title';
 const EducationComponent = () => {
   // bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700
   // console.log(education, categories);
@@ -23,39 +26,26 @@ const EducationComponent = () => {
     }
   }, [category]);
   return (
-    <div
-      className={`section-bg bg-gradient-to-tr from-slate-900 via-slate-800 to-slate-700 `}
-    >
-      <h3 id="formation" className="section-title text-neutral-200">
-        Formación
-      </h3>
-      <div
-        className={`flex ${
-          actualWidth > 768 ? 'flex-row-reverse' : 'flex-col'
-        } `}
-      >
-        <div
-          className={`flex flex-wrap gap-4 justify-center items-center h-2/3  m-auto ${
-            actualWidth > 768 ? 'w-2/5' : ' w-full'
-          }`}
-        >
+    <Section extraCss="pt-0 bg-neutral-300 flex flex-col gap-4">
+      <div className="flex  items-baseline gap-4">
+        <Title title="Formacion" />
+        <span className="font-shoulders text-4xl">&</span>
+        <Title title="Skills" />
+      </div>
+
+      <div className={`flex flex-col`}>
+        <div className="bg-green-800 gap-2 grid grid-cols-2gi ">
           {categories.map((cat) => (
-            <div
+            <button
               key={cat.name}
-              className={`cursor-pointer overflow-hidden flex flex-col justify-center items-center h-24 w-24 rounded transition ${
-                category === cat.name
-                  ? 'bg-slate-700 shadow-md shadow-slate-600/50 drop-shadow-md'
-                  : ''
-              }`}
+              className="bg-red-500 "
               onClick={() => {
                 setCategory(cat.name);
               }}
             >
-              <span className="text-xl text-gray-300 font-semibold w-full text-center">
-                {cat.name}
-              </span>
+              <span>{cat.name}</span>
               <img className="h-16 w-16 " src={cat.src} />
-            </div>
+            </button>
           ))}
         </div>
         <div className={` ${actualWidth > 768 ? 'w-3/5' : ' w-full mt-4'} `}>
@@ -66,7 +56,7 @@ const EducationComponent = () => {
           )}
         </div>
       </div>
-    </div>
+    </Section>
   );
 };
 

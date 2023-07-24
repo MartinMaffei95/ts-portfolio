@@ -95,7 +95,7 @@ export const ContactForm = () => {
   });
 
   return (
-    <div className="p-2 ">
+    <div className="p-2  w-full">
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -109,31 +109,34 @@ export const ContactForm = () => {
         theme="light"
       />
       <form onSubmit={handleSubmit}>
-        <InputField
-          value={values.name}
-          label={'Nombre'}
-          inputName={'name'}
-          labelClassname="label-style"
-          inputClassname={'input-style'}
-          handleChange={handleChange}
-          handleBlur={handleBlur}
-          errorMessage={
-            touched.name && errors.name ? (errors.name as string) : null
-          }
-        />
-        <InputField
-          value={values.email}
-          label={'Email'}
-          inputName={'email'}
-          type="email"
-          labelClassname="label-style"
-          inputClassname={'input-style'}
-          handleChange={handleChange}
-          handleBlur={handleBlur}
-          errorMessage={
-            touched.email && errors.email ? (errors.email as string) : null
-          }
-        />
+        <div className="md:flex md:justify-around md:w-full md:gap-2 ">
+          <InputField
+            value={values.name}
+            label={'Tu nombre'}
+            inputName={'name'}
+            labelClassname="label-style "
+            inputClassname={'input-style'}
+            handleChange={handleChange}
+            handleBlur={handleBlur}
+            errorMessage={
+              touched.name && errors.name ? (errors.name as string) : null
+            }
+          />
+          <InputField
+            value={values.email}
+            label={'Tu email'}
+            inputName={'email'}
+            type="email"
+            labelClassname="label-style"
+            inputClassname={'input-style'}
+            handleChange={handleChange}
+            handleBlur={handleBlur}
+            errorMessage={
+              touched.email && errors.email ? (errors.email as string) : null
+            }
+          />
+        </div>
+
         <InputField
           value={values.subject}
           label={'Asunto'}

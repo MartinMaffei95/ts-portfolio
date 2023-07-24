@@ -1,38 +1,60 @@
-import { Icon } from '../Icon';
+import { BsFillFileEarmarkPersonFill } from 'react-icons/bs';
+import Section from '../Section/Section';
+import Title from '../Title/Title';
+import { FaGithub, FaLinkedinIn, FaRegFilePdf } from 'react-icons/fa';
+import Icon from '../Icon/Icon';
+import { ContactForm } from '../Contact/ContactForm';
+import Divider from '../Divider/Divider';
 
 const Footer = () => {
   return (
-    <div className="flex flex-col p-6 pb-2 w-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 text-neutral-200 gap-2">
-      <h3 id="footer" className="section-title">
-        Contacto
-      </h3>
-      <div className="flex gap-2 w-full basis-2/3 items-center">
-        <p className=" basis-2/4">Nos encontramos por:</p>
-        <div className="flex justify-around  w-full basis-2/4">
+    <Section extraCss="bg-yellow-400 text-base flex flex-col gap-4 relative">
+      <Title
+        id="contact"
+        firstLetterClassName=""
+        restOfTextClassName="border-b-neutral-900 border-b-4 mb-0 border-t-4 pr-1 border-neutral-900"
+        title="Contacto"
+      />
+      <div className="flex flex-col gap-2 w-full justify-around bg-yellow-400 items-center">
+        <section className="flex w-full">
+          <ContactForm />
+        </section>
+        <section className="flex p-2 items-center gap-8 bg-yellow-400 w-screen justify-center">
+          <Divider extraCss="bg-neutral-900 " />
           <Icon
-            text="LinkedIn"
-            containerClassname="icon-module-style"
-            iconSrc="/icons/linkedin.png"
-            link="https://www.linkedin.com/in/martinmaffei95/"
-            rel="me"
-          />
+            As={'a'}
+            target="_blank"
+            referrerPolicy="no-referrer"
+            href="/pdf/MartinMaffeiCV.pdf"
+          >
+            Curriculum
+            <FaRegFilePdf />
+          </Icon>
           <Icon
-            text="GitHub"
-            containerClassname="icon-module-style"
-            iconSrc="/icons/008-github.png"
-            link="https://github.com/MartinMaffei95"
-            rel="me"
-          />
-        </div>
+            As={'a'}
+            target="_blank"
+            referrerPolicy="no-referrer"
+            href="https://www.linkedin.com/in/martinmaffei95/"
+          >
+            <FaLinkedinIn />
+          </Icon>
+          <Icon
+            As="a"
+            target="_blank"
+            referrerPolicy="no-referrer"
+            href="https://github.com/MartinMaffei95"
+          >
+            <FaGithub />
+          </Icon>
+          <Divider extraCss="bg-neutral-900 " />
+        </section>
       </div>
-      <button className="ghost-button border-neutral-200">
-        Descarga mi Cv!
-      </button>
-      <div className="flex font-light text-sm justify-between text-gray-400">
+
+      <div className="flex font-bold font-poiret text-sm justify-between text-neutral-900">
         <p>Martín Maffei</p>
         <p>Rosario, Santa Fe. Argentina</p>
       </div>
-    </div>
+    </Section>
   );
 };
 

@@ -6,6 +6,8 @@ module.exports = {
       sans: ['Roboto Condensed'],
       mono: ['Share Tech Mono'],
       dosis: ['Dosis'],
+      shoulders: ['Big Shoulders Display'],
+      poiret: ['Poiret One'],
     },
 
     screens: {

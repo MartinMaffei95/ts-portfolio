@@ -1,9 +1,11 @@
 import { useState, useContext } from 'react';
 import { Project } from '../../interfaces/data.interface';
 import { projects } from '../../data/projects';
-import { BsHexagonFill } from 'react-icons/bs';
 import ModalContext from '../../context/Modal/ModalContext';
 import { useResize } from '../../Hooks/useResize';
+import Section from '../Section/Section';
+import Title from '../Title/Title';
+import { Image } from '@chakra-ui/react';
 type ProjectCardProps = {
   project: Project;
   flexDirectionReverse?: boolean;
@@ -25,42 +27,37 @@ export const ProjectCard = ({
   if (actualWidth <= 768) {
     return (
       <div
-        className={`bg-neutral-300 h-60 w-full relative rounded flex justify-between overflow-hidden ${
-          flexDirectionReverse ? 'flex-row-reverse' : ''
-        }`}
+        className="w-full grid grid-cols-2 gap-4
+        auto-rows-fr
+      border bg-opacity-80
+      backdrop-blur
+      rounded-lg
+      overflow-hidden
+      duration-200
+      shadow-inner
+    shadow-neutral-300
+    from-neutral-200
+to-neutral-400
+text-neutral-600
+
+    
+
+      bg-gradient-to-tr
+    
+        relative
+      "
       >
         {
           <>
-            {/* basis-2/4 */}
             <div className="flex flex-col items-center justify-around w-full h-full  p-2 ">
-              <h3 className="subtitle text-slate-900 font-bold text-center">
+              <h3 className=" text-slate-900 font-bold text-center">
                 {project.name}
               </h3>
               <p className="text-center">{project.description}</p>
-              {/* <span> Stack utilizado</span>
-
-            <div className="flex justify-around gap-4  w-full">
-              {project.stack_used ? (
-                <ul>
-                  {project.stack_used.map((tech) => (
-                    <li>{tech}</li>
-                  ))}
-                </ul>
-              ) : null}
-              {project.stack_used ? (
-                <ul>
-                  {project.other_used.map((tech) => (
-                    <li>{tech}</li>
-                  ))}
-                </ul>
-              ) : null}
-            </div> */}
-              {/* <p className="">Deploy: {project.shortName}</p>
-            <p className="">Repositorio: {project.shortName}</p> */}
               <p className="font-light">{project.shortName}</p>
               <button
                 onClick={openModal}
-                className="btn-input bg-slate-700 font-bold text-lg mt-2 mb-2"
+                className=" bg-slate-700 font-bold text-lg mt-2 mb-2"
               >
                 Ver más
               </button>
@@ -71,8 +68,8 @@ export const ProjectCard = ({
                 flexDirectionReverse ? 'justify-start' : 'justify-end'
               }`}
             >
-              <img
-                className="top-0 left-0 h-full w-full object-contain"
+              <Image
+                className="top-0 left-0 h-full w-full object-cover"
                 src={project.img_card}
               />
             </div>
@@ -113,11 +110,9 @@ export const ProjectCard = ({
 export const Projects = () => {
   const [allProjects, setAllProjects] = useState<Project[]>(projects);
   return (
-    <div className="section-bg bg-gradient-to-b from-slate-900 via-slate-800 to-slate-700  text-slate-900">
-      <h3 id="projects" className="section-title text-neutral-200">
-        Mis proyectos
-      </h3>
-      <div className={`flex flex-wrap gap-4 justify-around`}>
+    <Section extraCss="bg-neutral-900 text-neutral-100 flex flex-col gap-4">
+      <Title title="Mis proyectos" />
+      <div className={`flex flex-wrap gap-4 justify-around `}>
         {allProjects
           ? allProjects.map((project, index) => (
               <ProjectCard
@@ -127,6 +122,6 @@ export const Projects = () => {
             ))
           : null}
       </div>
-    </div>
+    </Section>
   );
 };
