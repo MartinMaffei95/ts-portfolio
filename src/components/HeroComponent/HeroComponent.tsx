@@ -49,7 +49,7 @@ const HeroComponent = () => {
       >
         <Stat
           col={{ base: 'span 2', sm: 'span 1', md: 'span 2' }}
-          helpText="anos"
+          helpText="años"
           label="Experiencia"
           statNumber="+1"
         />
