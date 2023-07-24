@@ -6,6 +6,7 @@ import { BiBuildings } from 'react-icons/bi';
 import { experiences } from '../../data/experience';
 import Title from '../Title/Title';
 import topSvg from '../../assets/svg/top-corner.svg';
+import SimpleBadge from '../Generics/SimpleBadge/SimpleBadge';
 
 type Props = {};
 const ExperienceComponent: FC<Props> = ({}) => {
@@ -16,8 +17,10 @@ const ExperienceComponent: FC<Props> = ({}) => {
         className="absolute left-0 top-0 w-screen z-10 mix-blend-overlay "
       />
 
-      <Title title="Experiencia" />
-
+      <div className="flex gap-2 items-center">
+        <Title title="Experiencia" />
+        <SimpleBadge text="Ultimos dos" />
+      </div>
       {experiences?.map((exp, index) => (
         <>
           <article className="text-xs font-thin">

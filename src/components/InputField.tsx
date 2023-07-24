@@ -33,7 +33,7 @@ const InputField = ({
   iconFX,
 }: InputField) => {
   return (
-    <div className="relative">
+    <div className="relative w-full">
       <label
         htmlFor={inputName}
         className={labelClassname ? `${labelClassname}` : ''}
@@ -57,7 +57,7 @@ const InputField = ({
       </span>
       {/* iconPosition */}
       {errorMessage ? (
-        <p className="error-alert">
+        <p className=" my-2 flex items-center justify-center gap-4 rounded text-red-600 border border-red-600 p-2 ">
           <FiAlertCircle /> {errorMessage}
         </p>
       ) : null}

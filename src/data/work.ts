@@ -19,10 +19,11 @@ export const works: Work[] = [
   {
     title: 'SocialMedia1989 e-Learning',
     description:
-      'Plataforma de e-learning para poder realizar pagos de cursos de la empresa',
+      'Desarrolle la nueva plataforma de e-learning de la mepresa. Permite visualizar informacion de los cursos y realizar pagos',
     task_realized: [
-      'Identificacion e implementacion las necesidades actuales de la empresa hacia el producto',
-      'Desarrollo del sitio web de la empresa',
+      'Identificacion e implementacion de las necesidades actuales de la empresa en el producto',
+      'Desarrollo de la plataforma',
+      'Disenio del la interfaz de usuario.',
       'Integracion de paypal al sitio',
     ],
     portrait: '',
@@ -32,7 +33,7 @@ export const works: Work[] = [
   {
     title: 'VagImports WebSite',
     description:
-      'Web site completo. Incluye Landing Page con presentacion de la empresa, e-commerce completo, seccion de admin. Que permite realizar control de stock, control de ventas.',
+      'Web site + e-commerce. Optimice el SEO y rendimiento del landing page en proyecto incial aumentando el aterrizaje organico hacia el sitio. Ademas desarrolle el e-commerce completo con su seccion de admin. Unificando el proceso de control de stock y ventas del sitio.',
     task_realized: [
       'Desarrollo del sitio web de la mepresa',
       'Desarrollo del e-commerce e integracion la api',

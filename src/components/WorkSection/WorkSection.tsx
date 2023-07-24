@@ -3,16 +3,20 @@ import Section from '../Section/Section';
 import Title from '../Title/Title';
 import { works } from '../../data/work';
 import steps from '../../assets/svg/steps-layered.svg';
-import { Hide, Image, Show } from '@chakra-ui/react';
+import { Badge, Hide, Image, Show } from '@chakra-ui/react';
+import SimpleBadge from '../Generics/SimpleBadge/SimpleBadge';
 
 const WorkSection = () => {
   return (
     <Section extraCss="bg-neutral-900 text-neutral-100 flex flex-col gap-4 ">
-      <Title title="Ultimos trabajos" />
-      <div className="flex flex-col gap-4 md:flex-row md:grid md:grid-cols-2 md:auto-row-auto">
+      <div className="flex gap-2 items-center">
+        <Title title="Ultimos proyectos" />
+        <SimpleBadge text="Ultimos tres" />
+      </div>
+      <div className="flex flex-col gap-4 md:flex-row md:grid md:grid-cols-2 md:auto-row-auto ">
         {works?.slice(0, 3).map((job, index) => (
           <>
-            <div className="text-xl bg-neutral-900 md:bg-neutral-700 md:rounded-md md:p-4">
+            <div className="text-xl bg-neutral-900 md:bg-neutral-700 md:rounded-md md:p-4 md:last:col-span-2 md:last:w-[50%] md:last:place-self-center ">
               <h3>{job.title}</h3>
               <p className="text-base font-dosis font-normal">
                 {job.description}
@@ -26,18 +30,18 @@ const WorkSection = () => {
                 ))}
               </ul>
             </div>
-            {index + 1 < works?.slice(0, 3).length ? (
+            {/* {index + 1 < works?.slice(0, 3).length ? (
               <Hide above="sm">
                 <span className="flex self-stretch w-[50%] h-[2px] rounded bg-yellow-400" />
               </Hide>
-            ) : null}
+            ) : null} */}
           </>
         ))}
-        <Show above="md">
+        {/* <Show above="md">
           <div className="text-xl md:rounded-md md:p-4 flex items-center justify-center">
             Ver Todo
           </div>
-        </Show>
+        </Show> */}
       </div>
     </Section>
   );

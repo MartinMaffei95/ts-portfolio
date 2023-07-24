@@ -1,8 +1,14 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
-const Divider = () => {
+const Divider = ({ extraCss }: { extraCss?: string }) => {
   return (
-    <span className="flex self-center w-[50%] h-[2px] rounded bg-yellow-400" />
+    <span
+      className={twMerge(
+        'flex self-center w-[50%] h-[2px] rounded bg-yellow-400',
+        extraCss
+      )}
+    />
   );
 };
 

@@ -7,17 +7,20 @@ type Props = {
   title: string;
   firstLetterClassName?: string;
   restOfTextClassName?: string;
+  id?: string;
 };
 
 const Title: FC<Props> = ({
   title,
+  id,
   firstLetterClassName = 'text-yellow-400',
-  restOfTextClassName,
+  restOfTextClassName = 'border-b-2 border-b-yellow-500',
 }) => {
   const sliceTitle = useTitle(title);
 
   return (
     <Heading
+      id={id}
       fontFamily={''}
       className="font-shoulders text-4xl uppercase  font-semibold relative z-20 flex items-center "
     >

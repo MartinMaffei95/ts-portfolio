@@ -31,7 +31,7 @@ export const Header = () => {
   return (
     <>
       <header className=" flex flex-col z-50   p-2  bg-yellow-400 w-screen">
-        <div className="text-center  font-poiret text-lg tracking-wider">
+        <div className="text-center  font-poiret text-lg tracking-wider md:text-2xl ">
           Martin Maffei
         </div>
         <div
@@ -41,9 +41,12 @@ export const Header = () => {
          [&>div]:flex [&>div]:justify-center [&>div]:md:justify-around "
         >
           <div>
-            <Icon>
+            {/* <Icon>
               <BsFillFileEarmarkPersonFill />
-            </Icon>
+            </Icon> */}
+            <a href="#contact" className="text-sm md:text-xl">
+              Contactame
+            </a>
           </div>
           <Image
             boxSize={{ base: '80px', md: '200px' }}
@@ -53,10 +56,20 @@ export const Header = () => {
             src="/profile.png"
           />
           <div className=" flex gap-2">
-            <Icon>
+            <Icon
+              As={'a'}
+              target="_blank"
+              referrerPolicy="no-referrer"
+              href="https://www.linkedin.com/in/martinmaffei95/"
+            >
               <FaLinkedinIn />
             </Icon>
-            <Icon>
+            <Icon
+              As="a"
+              target="_blank"
+              referrerPolicy="no-referrer"
+              href="https://github.com/MartinMaffei95"
+            >
               <FaGithub />
             </Icon>
           </div>

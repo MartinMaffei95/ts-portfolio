@@ -12,7 +12,7 @@ const SkillsSection = () => {
         <Title title="Skills" />
       </div>
       <div className="sm:flex flex-col ">
-        <section className="[&>p]:font-normal md:text-base text-sm [&>p]:leading-relaxed flex flex-col sm:basis-2/3">
+        <section className="[&>p]:font-normal md:text-base text-sm [&>p]:leading-relaxed flex flex-col sm:basis-2/3 sm:px-12 text-justify">
           <p>
             Como desarrollador,{' '}
             <span className="text-yellow-600">
@@ -42,7 +42,7 @@ const SkillsSection = () => {
           </p>
         </section>
 
-        <div className="min-h-screen bg-neutral-300 flex items-center justify-center p-8  ">
+        <div className="min-h-screen bg-neutral-300 flex  justify-center p-8  ">
           <div
             className="w-full 
             grid grid-cols-4 gap-4 auto-rows-[minmax(0,_.5fr)]
@@ -51,7 +51,6 @@ const SkillsSection = () => {
       [&>button]:border [&>button]:bg-opacity-80
       [&>button]:backdrop-blur
       [&>button]:rounded-lg
-    
     [&>button]:duration-200
     [&>button]:shadow-inner
     [&>button]:shadow-neutral-300

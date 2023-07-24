@@ -244,7 +244,7 @@ export const skillIcons: SkillIconClass[] = [
     hover_gradient: 'bg-gradient-to-tr',
     col_span: 'col-span-1 ',
     row_span: 'row-span-1 md:row-span-2',
-    padding: 'p-3 min-[400px]:p-4   sm:p-2  ',
+    padding: 'p-3 min-[400px]:p-4   sm:p-2 overflow-hidden ',
   }),
   new SkillIconClass({
     icon: <FaAngular className="text-6xl font-bold" />,
@@ -256,7 +256,7 @@ export const skillIcons: SkillIconClass[] = [
     hover_gradient: 'bg-gradient-to-tr',
     col_span: 'col-span-1',
     row_span: 'row-span-1 md:row-span-2',
-    padding: 'p-3 min-[400px]:p-4   sm:p-2',
+    padding: 'p-3 min-[400px]:p-4   sm:p-2 overflow-hidden',
   }),
   new SkillIconClass({
     icon: <FaVuejs className="text-6xl font-bold" />,
@@ -268,7 +268,7 @@ export const skillIcons: SkillIconClass[] = [
     hover_gradient: 'bg-gradient-to-tr',
     col_span: 'col-span-1',
     row_span: 'row-span-1 md:row-span-2',
-    padding: 'p-3 min-[400px]:p-4   sm:p-2',
+    padding: 'p-3 min-[400px]:p-4   sm:p-2 overflow-hidden',
   }),
   new SkillIconClass({
     icon: <TbBrandReactNative className="text-6xl font-bold" />,
@@ -280,7 +280,7 @@ export const skillIcons: SkillIconClass[] = [
     hover_gradient: 'bg-gradient-to-tr',
     col_span: 'col-span-1',
     row_span: 'row-span-1 md:row-span-2',
-    padding: 'p-3 min-[400px]:p-4   sm:p-2',
+    padding: 'p-3 min-[400px]:p-4   sm:p-2 overflow-hidden',
   }),
   new SkillIconClass({
     icon: <SiVite className="text-6xl font-bold" />,
@@ -292,7 +292,7 @@ export const skillIcons: SkillIconClass[] = [
     hover_gradient: 'bg-gradient-to-tr',
     col_span: 'col-span-1',
     row_span: 'row-span-1 md:row-span-2',
-    padding: 'p-3 min-[400px]:p-4   sm:p-2',
+    padding: 'p-3 min-[400px]:p-4   sm:p-2 overflow-hidden',
   }),
   new SkillIconClass({
     icon: <SiGoland className="text-6xl font-bold" />,
@@ -304,7 +304,7 @@ export const skillIcons: SkillIconClass[] = [
     hover_gradient: 'bg-gradient-to-tr',
     col_span: 'col-span-1',
     row_span: 'row-span-1 md:row-span-2',
-    padding: 'p-3 min-[400px]:p-4   sm:p-2',
+    padding: 'p-3 min-[400px]:p-4   sm:p-2 overflow-hidden',
   }),
   new SkillIconClass({
     icon: <FaPython className="text-6xl font-bold" />,
@@ -316,7 +316,7 @@ export const skillIcons: SkillIconClass[] = [
     hover_gradient: 'bg-gradient-to-tl',
     col_span: 'col-span-1',
     row_span: 'row-span-1 md:row-span-2',
-    padding: 'p-3 min-[400px]:p-4   sm:p-2 ',
+    padding: 'p-3 min-[400px]:p-4   sm:p-2 overflow-hidden ',
   }),
   new SkillIconClass({
     icon: <FaWordpress className="text-6xl font-bold" />,
@@ -328,7 +328,7 @@ export const skillIcons: SkillIconClass[] = [
     hover_gradient: 'bg-gradient-to-tr',
     col_span: 'col-span-1',
     row_span: 'row-span-1 md:row-span-2',
-    padding: 'p-3 min-[400px]:p-4   sm:p-2',
+    padding: 'p-3 min-[400px]:p-4   sm:p-2 overflow-hidden',
   }),
 ];
 // export const skillIcons: SkillIcon[] = [
