@@ -17,7 +17,10 @@ const Title: FC<Props> = ({
   const sliceTitle = useTitle(title)
 
   return (
-    <Heading className="font-shoulders text-4xl uppercase  font-semibold relative z-20 flex items-center ">
+    <Heading
+      fontFamily={''}
+      className="font-shoulders text-4xl uppercase  font-semibold relative z-20 flex items-center "
+    >
       <span className={` text-5xl ${firstLetterClassName}`}>
         {sliceTitle[0]}
       </span>

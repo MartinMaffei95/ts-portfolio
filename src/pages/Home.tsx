@@ -17,16 +17,16 @@ export const Home = () => {
       <HeroComponent />
       <ExperienceComponent />
       <div className="w-screen relative bg-neutral-300 ">
-        <Image src={waves} />
+        <Image className="w-full" src={waves} />
       </div>
       {/* <EducationComponent /> */}
       <SkillsSection />
       <div className="w-screen relative bg-neutral-300 rotate-180">
-        <Image src={waves} />
+        <Image className="w-full" src={waves} />
       </div>
       <WorkSection />
       <div className="w-screen relative bg-neutral-900 ">
-        <Image src={steps} />
+        <Image className="w-full" src={steps} />
       </div>
       {/* <Projects /> */}
       <Footer />
