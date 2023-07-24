@@ -1,20 +1,20 @@
-import { Heading } from '@chakra-ui/react';
-import { FC } from 'react';
-import useTitle from '../../Hooks/useTitles';
-import { CSSProperties } from '@emotion/serialize';
+import { Heading } from '@chakra-ui/react'
+import { FC } from 'react'
+import useTitle from '../../Hooks/useTitles'
+import { CSSProperties } from '@emotion/serialize'
 
 type Props = {
-  title: string;
-  firstLetterClassName?: string;
-  restOfTextClassName?: string;
-};
+  title: string
+  firstLetterClassName?: string
+  restOfTextClassName?: string
+}
 
 const Title: FC<Props> = ({
   title,
   firstLetterClassName = 'text-yellow-400',
-  restOfTextClassName,
+  restOfTextClassName = 'border-b-2 border-b-yellow-500',
 }) => {
-  const sliceTitle = useTitle(title);
+  const sliceTitle = useTitle(title)
 
   return (
     <Heading className="font-shoulders text-4xl uppercase  font-semibold relative z-20 flex items-center ">
@@ -22,12 +22,10 @@ const Title: FC<Props> = ({
         {sliceTitle[0]}
       </span>
       {!!sliceTitle[1] ? (
-        <span className={`border-b border-b-yellow-500 ${restOfTextClassName}`}>
-          {sliceTitle[1]}
-        </span>
+        <span className={` ${restOfTextClassName}`}>{sliceTitle[1]}</span>
       ) : null}
     </Heading>
-  );
-};
+  )
+}
 
-export default Title;
+export default Title

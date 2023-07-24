@@ -1,8 +1,8 @@
-import { BsFillFileEarmarkPersonFill } from 'react-icons/bs';
-import Section from '../Section/Section';
-import Title from '../Title/Title';
-import { FaGithub, FaLinkedinIn, FaRegFilePdf } from 'react-icons/fa';
-import Icon from '../Icon/Icon';
+import { BsFillFileEarmarkPersonFill } from 'react-icons/bs'
+import Section from '../Section/Section'
+import Title from '../Title/Title'
+import { FaGithub, FaLinkedinIn, FaRegFilePdf } from 'react-icons/fa'
+import Icon from '../Icon/Icon'
 
 const Footer = () => {
   return (
@@ -29,7 +29,7 @@ const Footer = () => {
         <p>Rosario, Santa Fe. Argentina</p>
       </div>
     </Section>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
