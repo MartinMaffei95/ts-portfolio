@@ -4,24 +4,24 @@ import {
   Grid,
   GridItem,
   ResponsiveValue,
-} from '@chakra-ui/react';
-import { useResize } from '../../Hooks/useResize';
+} from '@chakra-ui/react'
+import { useResize } from '../../Hooks/useResize'
 
-import topSvg from '../../assets/svg/top-corner.svg';
-import bottomSvg from '../../assets/svg/bottom-corner.svg';
+import topSvg from '../../assets/svg/top-corner.svg'
+import bottomSvg from '../../assets/svg/bottom-corner.svg'
 const HeroComponent = () => {
-  const { actualWidth } = useResize();
+  const { actualWidth } = useResize()
   return (
     <div
       id="hero"
       className="bg-neutral-300 text-black h-full relative flex flex-col 
       justify-center gap-6 text-center overflow-hidden p-4
-      md:flex-row md:items-center
+      md:flex-row md:items-center md:justify-around md:px-12 md:gap-
       
       "
     >
       <Image src={topSvg} className="absolute left-0 top-0 w-screen " />
-      <div className="flex flex-col gap-6 md:basis-2/3">
+      <div className="flex flex-col gap-6 md:basis-1/3">
         <Heading
           fontFamily={''}
           className="font-shoulders  text-9xl uppercase font-bold relative text-neutral-900 z-20"
@@ -45,7 +45,7 @@ const HeroComponent = () => {
           sm: 'repeat(3,1fr)',
           md: 'repeat(2,1fr)',
         }}
-        className="z-20  md:basis-2/3 w-full gap-4 "
+        className="z-20  md:basis-1/3 w-full gap-4 "
       >
         <Stat
           col={{ base: 'span 2', sm: 'span 1', md: 'span 2' }}
@@ -62,18 +62,18 @@ const HeroComponent = () => {
         className="absolute left-0 bottom-0 w-screen rotate-180"
       />
     </div>
-  );
-};
+  )
+}
 
-export default HeroComponent;
+export default HeroComponent
 
 type Props = {
-  label: string;
-  statNumber: string;
-  helpText?: string;
-  col?: ResponsiveValue<any> | undefined;
-  row?: ResponsiveValue<any> | undefined;
-};
+  label: string
+  statNumber: string
+  helpText?: string
+  col?: ResponsiveValue<any> | undefined
+  row?: ResponsiveValue<any> | undefined
+}
 const Stat = ({ label, statNumber, helpText, col, row }: Props) => {
   return (
     <GridItem
@@ -87,5 +87,5 @@ const Stat = ({ label, statNumber, helpText, col, row }: Props) => {
       </p>
       <p className="">{label}</p>
     </GridItem>
-  );
-};
+  )
+}
