@@ -1,21 +1,21 @@
 // ## REACT, TYPES, & INTERFACES
-import { FormEvent } from 'react';
-import { ContactFormType } from '../../interfaces/contactForm.interface';
+import { FormEvent } from 'react'
+import { ContactFormType } from '../../interfaces/contactForm.interface'
 
 // ## COMPONENTS
-import InputField from '../InputField';
-import TextArea from '../TextArea';
+import InputField from '../InputField'
+import TextArea from '../TextArea'
 
 // ## TOASTIFY
-import { toast, ToastContainer, ToastOptions } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast, ToastContainer, ToastOptions } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 // ## FORMIK
-import * as yup from 'yup';
-import { useFormik } from 'formik';
-import { FormikProps } from 'formik/dist/types';
+import * as yup from 'yup'
+import { useFormik } from 'formik'
+import { FormikProps } from 'formik/dist/types'
 
 // ## eMAILjs
-import emailjs, { send } from '@emailjs/browser';
+import emailjs, { send } from '@emailjs/browser'
 
 export const ContactForm = () => {
   const initialValues: ContactFormType = {
@@ -23,14 +23,14 @@ export const ContactForm = () => {
     email: '',
     subject: '',
     message: '',
-  };
-  const requiredMessage = 'Este campo es requerido';
+  }
+  const requiredMessage = 'Este campo es requerido'
   const validationSchema = yup.object({
     name: yup.string().required(requiredMessage),
     email: yup.string().email().required(requiredMessage),
     subject: yup.string().required(requiredMessage),
     message: yup.string().required(requiredMessage),
-  });
+  })
   const toast_config: ToastOptions<{}> = {
     position: 'top-right',
     autoClose: 5000,
@@ -40,12 +40,12 @@ export const ContactForm = () => {
     draggable: true,
     progress: undefined,
     theme: 'light',
-  };
+  }
   const {
     VITE_APP_EMAILJS_SERVICE,
     VITE_APP_EMAILJS_TEMPLATE,
     VITE_APP_EMAILJS_USER,
-  } = import.meta.env;
+  } = import.meta.env
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     try {
@@ -57,29 +57,29 @@ export const ContactForm = () => {
           VITE_APP_EMAILJS_USER
         )
         .then(() => {
-          toast.success('Tu mensaje se envio correctamente!', toast_config);
+          toast.success('Tu mensaje se envio correctamente!', toast_config)
         })
         .catch((err) => {
           toast.error(
             'Ocurrio un error. No pudimos enviar tu mensaje',
             toast_config
-          );
-        });
+          )
+        })
     } catch (err) {
-      console.log(err);
+      console.log(err)
       if (err instanceof Error) {
         toast.error(
           'Ocurrio un error. No pudimos enviar tu mensaje',
           toast_config
-        );
+        )
       } else {
         toast.error(
           'Ocurrio un error. No pudimos enviar tu mensaje',
           toast_config
-        );
+        )
       }
     }
-  };
+  }
 
   const {
     handleSubmit,
@@ -92,7 +92,7 @@ export const ContactForm = () => {
     onSubmit,
     initialValues,
     validationSchema,
-  });
+  })
 
   return (
     <div className="p-2  w-full">
@@ -109,7 +109,7 @@ export const ContactForm = () => {
         theme="light"
       />
       <form onSubmit={handleSubmit}>
-        <div className="md:flex md:justify-around md:w-full md:gap-2 ">
+        <div className="md:flex md:justify-around md:w-full md:gap-2 text-neutral-900">
           <InputField
             value={values.name}
             label={'Tu nombre'}
@@ -173,5 +173,5 @@ export const ContactForm = () => {
         </button>
       </form>
     </div>
-  );
-};
+  )
+}

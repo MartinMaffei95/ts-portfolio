@@ -1,33 +1,33 @@
-import { useEffect, useRef, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useResize } from '../../Hooks/useResize';
-import { Image } from '@chakra-ui/react';
-import { BsFillFileEarmarkPersonFill } from 'react-icons/bs';
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
-import Icon from '../Icon/Icon';
+import { useEffect, useRef, useState } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { useResize } from '../../Hooks/useResize'
+import { Image } from '@chakra-ui/react'
+import { BsFillFileEarmarkPersonFill } from 'react-icons/bs'
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
+import Icon from '../Icon/Icon'
 
 export const Header = () => {
-  const { state } = useLocation();
-  const { targetId } = state || {};
-  const [open, setOpen] = useState(false);
+  const { state } = useLocation()
+  const { targetId } = state || {}
+  const [open, setOpen] = useState(false)
   const toggleMenu = () => {
-    setOpen(!open);
-  };
+    setOpen(!open)
+  }
 
   const goTo = (url: string, section: string) => {
-    navigate(`${url}`, { state: { targetId: `${section}` } });
-    toggleMenu();
-  };
+    navigate(`${url}`, { state: { targetId: `${section}` } })
+    toggleMenu()
+  }
 
-  const pdfLink = useRef<HTMLAnchorElement>(null!);
-  const { actualWidth } = useResize();
-  const navigate = useNavigate();
+  const pdfLink = useRef<HTMLAnchorElement>(null!)
+  const { actualWidth } = useResize()
+  const navigate = useNavigate()
   useEffect(() => {
-    const el = document.getElementById(targetId);
+    const el = document.getElementById(targetId)
     if (el) {
-      el.scrollIntoView();
+      el.scrollIntoView()
     }
-  }, [targetId]);
+  }, [targetId])
   return (
     <>
       <header className=" flex flex-col z-50   p-2  bg-yellow-400 w-screen">
@@ -44,7 +44,10 @@ export const Header = () => {
             {/* <Icon>
               <BsFillFileEarmarkPersonFill />
             </Icon> */}
-            <a href="#contact" className="text-sm md:text-xl">
+            <a
+              href="#contact"
+              className="text-sm md:text-xl hover:text-neutral-500 hover:underline hover:shadow-lg shadow-neutral-600 duration-200"
+            >
               Contactame
             </a>
           </div>
@@ -76,5 +79,5 @@ export const Header = () => {
         </div>
       </header>
     </>
-  );
-};
+  )
+}

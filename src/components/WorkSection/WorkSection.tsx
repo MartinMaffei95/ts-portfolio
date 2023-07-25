@@ -1,10 +1,10 @@
-import React from 'react';
-import Section from '../Section/Section';
-import Title from '../Title/Title';
-import { works } from '../../data/work';
-import steps from '../../assets/svg/steps-layered.svg';
-import { Badge, Hide, Image, Show } from '@chakra-ui/react';
-import SimpleBadge from '../Generics/SimpleBadge/SimpleBadge';
+import React from 'react'
+import Section from '../Section/Section'
+import Title from '../Title/Title'
+import { works } from '../../data/work'
+import steps from '../../assets/svg/steps-layered.svg'
+import { Badge, Hide, Image, Show } from '@chakra-ui/react'
+import SimpleBadge from '../Generics/SimpleBadge/SimpleBadge'
 
 const WorkSection = () => {
   return (
@@ -18,13 +18,13 @@ const WorkSection = () => {
           <>
             <div className="text-xl bg-neutral-900 md:bg-neutral-700 md:rounded-md md:p-4 md:last:col-span-2 md:last:w-[50%] md:last:place-self-center ">
               <h3>{job.title}</h3>
-              <p className="text-base font-dosis font-normal">
+              <p className="text-base font-dosis font-normal px-2">
                 {job.description}
               </p>
-              <h4 className="font-semibold text-base text-yellow-400">
+              <h4 className="font-semibold text-base text-yellow-400 my-2">
                 Tareas destacadas:
               </h4>
-              <ul className="text-sm font-thin tracking-wider list-disc px-4 flex flex-col gap-2">
+              <ul className="text-base font-thin tracking-wider list-disc  px-8 flex flex-col gap-2">
                 {job.task_realized.map((task) => (
                   <li>{task}</li>
                 ))}
@@ -44,7 +44,7 @@ const WorkSection = () => {
         </Show> */}
       </div>
     </Section>
-  );
-};
+  )
+}
 
-export default WorkSection;
+export default WorkSection

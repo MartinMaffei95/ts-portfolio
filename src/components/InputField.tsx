@@ -1,20 +1,20 @@
-import { ChangeEventHandler, FocusEventHandler } from 'react';
-import { FiAlertCircle } from 'react-icons/fi';
+import { ChangeEventHandler, FocusEventHandler } from 'react'
+import { FiAlertCircle } from 'react-icons/fi'
 
 interface InputField {
-  label: string;
-  inputName: string;
-  type?: string;
-  value: string | number;
-  placeholder?: string;
-  handleChange: ChangeEventHandler<HTMLInputElement>;
-  handleBlur: FocusEventHandler<HTMLInputElement>;
-  errorMessage?: string | null;
-  inputClassname?: string;
-  labelClassname?: string;
-  icon?: JSX.Element;
-  iconPosition?: string;
-  iconFX?: Function;
+  label: string
+  inputName: string
+  type?: string
+  value: string | number
+  placeholder?: string
+  handleChange: ChangeEventHandler<HTMLInputElement>
+  handleBlur: FocusEventHandler<HTMLInputElement>
+  errorMessage?: string | null
+  inputClassname?: string
+  labelClassname?: string
+  icon?: JSX.Element
+  iconPosition?: string
+  iconFX?: Function
 }
 
 const InputField = ({
@@ -51,7 +51,7 @@ const InputField = ({
       />
       <span
         onClick={() => iconFX && iconFX()}
-        className="absolute z-1000000 text-primary-800 text-2xl right-0 top-0 m-2"
+        className="absolute z-1000000 text-neutral-900 text-2xl right-0 top-0 m-2"
       >
         {icon ? icon : null}
       </span>
@@ -62,7 +62,7 @@ const InputField = ({
         </p>
       ) : null}
     </div>
-  );
-};
+  )
+}
 
-export default InputField;
+export default InputField

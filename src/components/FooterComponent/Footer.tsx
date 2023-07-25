@@ -1,14 +1,14 @@
-import { BsFillFileEarmarkPersonFill } from 'react-icons/bs';
-import Section from '../Section/Section';
-import Title from '../Title/Title';
-import { FaGithub, FaLinkedinIn, FaRegFilePdf } from 'react-icons/fa';
-import Icon from '../Icon/Icon';
-import { ContactForm } from '../Contact/ContactForm';
-import Divider from '../Divider/Divider';
+import { BsFillFileEarmarkPersonFill } from 'react-icons/bs'
+import Section from '../Section/Section'
+import Title from '../Title/Title'
+import { FaGithub, FaLinkedinIn, FaRegFilePdf } from 'react-icons/fa'
+import Icon from '../Icon/Icon'
+import { ContactForm } from '../Contact/ContactForm'
+import Divider from '../Divider/Divider'
 
 const Footer = () => {
   return (
-    <Section extraCss="bg-yellow-400 text-base flex flex-col gap-4 relative">
+    <Section extraCss="bg-yellow-400 text-base flex flex-col gap-4 relative ">
       <Title
         id="contact"
         firstLetterClassName=""
@@ -55,7 +55,7 @@ const Footer = () => {
         <p>Rosario, Santa Fe. Argentina</p>
       </div>
     </Section>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

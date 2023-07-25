@@ -1,25 +1,25 @@
-import { Show, Tooltip } from '@chakra-ui/react';
-import Section from '../Section/Section';
-import Title from '../Title/Title';
-import { skillIcons } from './skills-icons.config';
+import { Show, Tooltip } from '@chakra-ui/react'
+import Section from '../Section/Section'
+import Title from '../Title/Title'
+import { skillIcons } from './skills-icons.config'
 
 const SkillsSection = () => {
   return (
-    <Section extraCss="flex flex-col gap-4 bg-neutral-300">
+    <Section extraCss="flex flex-col gap-4 bg-neutral-200">
       <div className="flex  items-baseline gap-4">
         {/* <Title title="Formacion" />
         <span className="font-shoulders text-4xl">&</span> */}
         <Title title="Skills" />
       </div>
       <div className="sm:flex flex-col ">
-        <section className="[&>p]:font-normal md:text-base text-sm [&>p]:leading-relaxed flex flex-col sm:basis-2/3 sm:px-12 text-justify">
+        <section className="[&>p]:font-normal md:text-base text-sm [&>p]:leading-relaxed flex flex-col sm:basis-2/3 sm:px-12 text-justify pb-4">
           <p>
             Como desarrollador,{' '}
-            <span className="text-yellow-600">
+            <span className="text-yellow-600 font-semibold tracking-widest">
               me especializo en el frontend{' '}
             </span>
             , donde utilizo React y TypeScript. Además, tengo{' '}
-            <span className="text-yellow-600">
+            <span className="text-yellow-600 font-semibold tracking-widest">
               experiencia en el desarrollo backend
             </span>{' '}
             con Node.
@@ -27,7 +27,7 @@ const SkillsSection = () => {
           <p>
             Sin embargo, mi conocimiento se extiende más allá de estas
             tecnologías, también poseo{' '}
-            <span className="text-yellow-600">
+            <span className="text-yellow-600 font-semibold tracking-widest">
               bases sólidas en diversos lenguajes y herramientas de desarrollo.
             </span>
           </p>
@@ -35,14 +35,14 @@ const SkillsSection = () => {
             Esta amplia gama de conocimientos me brinda una visión más completa
             y un enfoque más versátil en el proceso de desarrollo. Gracias a
             ello puedo abordar los proyectos de manera integral y{' '}
-            <span className="text-neutral-100  bg-yellow-600 px-1 -">
+            <span className="text-neutral-100 font-semibold tracking-widest  bg-yellow-600 px-1 -">
               crear soluciones más completas y eficientes
             </span>{' '}
             para las necesidades de los usuarios.
           </p>
         </section>
 
-        <div className="min-h-screen bg-neutral-300 flex  justify-center p-8  ">
+        <div className="min-h-screen  flex  justify-center p-8  ">
           <div
             className="w-full 
             grid grid-cols-4 gap-4 auto-rows-[minmax(0,_.5fr)]
@@ -83,7 +83,7 @@ const SkillsSection = () => {
         </div>
       </div>
     </Section>
-  );
-};
+  )
+}
 
-export default SkillsSection;
+export default SkillsSection
