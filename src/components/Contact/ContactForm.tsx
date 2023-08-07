@@ -14,10 +14,14 @@ import * as yup from 'yup'
 import { useFormik } from 'formik'
 import { FormikProps } from 'formik/dist/types'
 
+import { useTranslation } from 'react-i18next'
+
 // ## eMAILjs
 import emailjs, { send } from '@emailjs/browser'
 
 export const ContactForm = () => {
+  const [translate] = useTranslation('global')
+
   const initialValues: ContactFormType = {
     name: '',
     email: '',
@@ -112,7 +116,7 @@ export const ContactForm = () => {
         <div className="md:flex md:justify-around md:w-full md:gap-2 text-neutral-900">
           <InputField
             value={values.name}
-            label={'Tu nombre'}
+            label={translate('contactSection.form.name')}
             inputName={'name'}
             labelClassname="label-style "
             inputClassname={'input-style'}
@@ -124,7 +128,7 @@ export const ContactForm = () => {
           />
           <InputField
             value={values.email}
-            label={'Tu email'}
+            label={translate('contactSection.form.mail')}
             inputName={'email'}
             type="email"
             labelClassname="label-style"
@@ -139,7 +143,7 @@ export const ContactForm = () => {
 
         <InputField
           value={values.subject}
-          label={'Asunto'}
+          label={translate('contactSection.form.subject')}
           inputName={'subject'}
           labelClassname="label-style"
           inputClassname={'input-style'}
@@ -153,7 +157,7 @@ export const ContactForm = () => {
         />
         <TextArea
           value={values.message}
-          label={'Mensaje'}
+          label={translate('contactSection.form.message')}
           inputName={'message'}
           labelClassname="label-style"
           inputClassname={'input-style'}
@@ -169,7 +173,7 @@ export const ContactForm = () => {
           className="primary-button font-bold text-lg mt-2 mb-2 w-full"
           type="submit"
         >
-          Enviar
+          {translate('contactSection.form.send')}
         </button>
       </form>
     </div>

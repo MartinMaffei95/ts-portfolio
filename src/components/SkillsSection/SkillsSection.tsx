@@ -2,44 +2,37 @@ import { Show, Tooltip } from '@chakra-ui/react'
 import Section from '../Section/Section'
 import Title from '../Title/Title'
 import { skillIcons } from './skills-icons.config'
+import Highlight from '../Higlight/Highlight'
+import { useTranslation } from 'react-i18next'
 
 const SkillsSection = () => {
+  const [translate] = useTranslation('global')
+
   return (
     <Section extraCss="flex flex-col gap-4 bg-neutral-200">
       <div className="flex  items-baseline gap-4">
-        {/* <Title title="Formacion" />
-        <span className="font-shoulders text-4xl">&</span> */}
-        <Title title="Skills" />
+        <Title title={translate('skillsSection.title.title')} />
       </div>
       <div className="sm:flex flex-col ">
         <section className="[&>p]:font-normal md:text-base text-sm [&>p]:leading-relaxed flex flex-col sm:basis-2/3 sm:px-12 text-justify pb-4">
-          <p>
-            Como desarrollador,{' '}
-            <span className="text-yellow-600 font-semibold tracking-widest">
-              me especializo en el frontend{' '}
-            </span>
-            , donde utilizo React y TypeScript. Además, tengo{' '}
-            <span className="text-yellow-600 font-semibold tracking-widest">
-              experiencia en el desarrollo backend
-            </span>{' '}
-            con Node.
-          </p>
-          <p>
-            Sin embargo, mi conocimiento se extiende más allá de estas
-            tecnologías, también poseo{' '}
-            <span className="text-yellow-600 font-semibold tracking-widest">
-              bases sólidas en diversos lenguajes y herramientas de desarrollo.
-            </span>
-          </p>
-          <p>
-            Esta amplia gama de conocimientos me brinda una visión más completa
-            y un enfoque más versátil en el proceso de desarrollo. Gracias a
-            ello puedo abordar los proyectos de manera integral y{' '}
-            <span className="text-neutral-100 font-semibold tracking-widest  bg-yellow-600 px-1 -">
-              crear soluciones más completas y eficientes
-            </span>{' '}
-            para las necesidades de los usuarios.
-          </p>
+          <Highlight
+            focus={translate('skillsSection.paragraph1.focus')}
+            colored={translate('skillsSection.paragraph1.colored')}
+          >
+            {translate('skillsSection.paragraph1.text')}
+          </Highlight>
+          <Highlight
+            focus={translate('skillsSection.paragraph2.focus')}
+            colored={translate('skillsSection.paragraph2.colored')}
+          >
+            {translate('skillsSection.paragraph2.text')}
+          </Highlight>
+          <Highlight
+            focus={translate('skillsSection.paragraph3.focus')}
+            colored={translate('skillsSection.paragraph3.colored')}
+          >
+            {translate('skillsSection.paragraph3.text')}
+          </Highlight>
         </section>
 
         <div className="min-h-screen  flex  justify-center p-8  ">

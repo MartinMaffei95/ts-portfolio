@@ -6,10 +6,13 @@ import {
   ResponsiveValue,
 } from '@chakra-ui/react'
 import { useResize } from '../../Hooks/useResize'
+import { useTranslation } from 'react-i18next'
 
 import topSvg from '../../assets/svg/top-corner.svg'
 import bottomSvg from '../../assets/svg/bottom-corner.svg'
 const HeroComponent = () => {
+  const [translate] = useTranslation('global')
+
   const { actualWidth } = useResize()
   return (
     <div
@@ -31,10 +34,7 @@ const HeroComponent = () => {
 
         <span className="flex  z-10 self-center w-full h-[2px] rounded bg-yellow-700 " />
         <p className="z-10 tracking-wider leading-relaxed">
-          Soy un apasionado desarrollador Full Stack especializado en el
-          desarrollo Front-end. Mi experiencia se centra en la creación de
-          soluciones web eficientes y atractivas, combinando tecnologías
-          modernas para brindar experiencias de usuario excepcionales.
+          {translate('heroSection.text')}
         </p>
       </div>
 
@@ -49,12 +49,15 @@ const HeroComponent = () => {
       >
         <Stat
           col={{ base: 'span 2', sm: 'span 1', md: 'span 2' }}
-          helpText="años"
-          label="Experiencia"
+          helpText={translate('heroSection.stats.years.auxiliar')}
+          label={translate('heroSection.stats.years.main')}
           statNumber="+1"
         />
-        <Stat label="Proyectos" statNumber="+20" />
-        <Stat label="Clientes" statNumber="+10" />
+        <Stat
+          label={translate('heroSection.stats.projects')}
+          statNumber="+20"
+        />
+        <Stat label={translate('heroSection.stats.clients')} statNumber="+10" />
       </Grid>
       {/* </Show> */}
       <Image

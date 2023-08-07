@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Heading, Image } from '@chakra-ui/react'
+import { Image } from '@chakra-ui/react'
 import Section from '../Section/Section'
 import { FaRegCalendarAlt } from 'react-icons/fa'
 import { BiBuildings } from 'react-icons/bi'
@@ -7,9 +7,14 @@ import { experiences } from '../../data/experience'
 import Title from '../Title/Title'
 import topSvg from '../../assets/svg/top-corner.svg'
 import SimpleBadge from '../Generics/SimpleBadge/SimpleBadge'
+import { Language } from '../../interfaces'
+import { useTranslation } from 'react-i18next'
 
 type Props = {}
+
 const ExperienceComponent: FC<Props> = ({}) => {
+  const [translate, i18n] = useTranslation('global')
+
   return (
     <Section extraCss="bg-neutral-900 relative  min-h-screen text-neutral-100 gap-4 flex flex-col ">
       <Image
@@ -18,10 +23,10 @@ const ExperienceComponent: FC<Props> = ({}) => {
       />
 
       <div className="flex gap-2 items-center z-10">
-        <Title title="Experiencia" />
-        <SimpleBadge text="Ultimos dos" />
+        <Title title={translate('experienceSection.title.title')} />
+        <SimpleBadge text={translate('experienceSection.title.badge')} />
       </div>
-      {experiences?.map((exp, index) => (
+      {experiences[i18n.language as Language]?.map((exp, index) => (
         <>
           <article className="text-sm font-normal md:px-12 text-justify ">
             <header className="flex flex-col gap-1">
@@ -47,7 +52,7 @@ const ExperienceComponent: FC<Props> = ({}) => {
               </ul>
             </section>
           </article>
-          {index + 1 < experiences?.length ? (
+          {index + 1 < experiences[i18n.language as Language]?.length ? (
             <span className="flex self-center w-[50%] h-[2px] rounded bg-yellow-400" />
           ) : null}
         </>
