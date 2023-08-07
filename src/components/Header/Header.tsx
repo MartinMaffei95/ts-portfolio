@@ -1,10 +1,19 @@
 import { useEffect, useRef, useState } from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useResize } from '../../Hooks/useResize'
-import { Image } from '@chakra-ui/react'
-import { BsFillFileEarmarkPersonFill } from 'react-icons/bs'
+import {
+  Button,
+  Image,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+} from '@chakra-ui/react'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import Icon from '../Icon/Icon'
+import { useTranslation } from 'react-i18next'
+import { flags } from '../../config/flags.config'
+import { MdArrowDropDown } from 'react-icons/md'
 
 export const Header = () => {
   const { state } = useLocation()
@@ -13,12 +22,12 @@ export const Header = () => {
   const toggleMenu = () => {
     setOpen(!open)
   }
+  const [translate, i18n] = useTranslation('global')
 
   const goTo = (url: string, section: string) => {
     navigate(`${url}`, { state: { targetId: `${section}` } })
     toggleMenu()
   }
-
   const pdfLink = useRef<HTMLAnchorElement>(null!)
   const { actualWidth } = useResize()
   const navigate = useNavigate()
@@ -38,18 +47,51 @@ export const Header = () => {
           className="flex justify-center items-center gap-2 w-full text-2xl 
          [&>div]:w-full [&>div]:py-2  [&>div]:border-black 
          [&>div]:border-t [&>div]:border-b 
-         [&>div]:flex [&>div]:justify-center [&>div]:md:justify-around "
+         [&>div]:flex [&>div]:justify-center [&>div]:items-center [&>div]:md:justify-around "
         >
           <div>
-            {/* <Icon>
-              <BsFillFileEarmarkPersonFill />
-            </Icon> */}
             <a
               href="#contact"
-              className="text-sm md:text-xl hover:text-neutral-500 hover:underline hover:shadow-lg shadow-neutral-600 duration-200"
+              className="capitalize text-sm md:text-xl hover:text-neutral-500 hover:underline  duration-200"
             >
-              Contactame
+              {translate('header.contact')}
             </a>
+            <Menu>
+              {({ isOpen }) => (
+                <>
+                  <MenuButton
+                    isActive={isOpen}
+                    as={Button}
+                    rightIcon={
+                      <MdArrowDropDown
+                        className={`text-xl duration-150 ${
+                          isOpen ? 'rotate-180' : ''
+                        }`}
+                      />
+                    }
+                  >
+                    <span
+                      className={` ${
+                        flags.find((f) => f.code === i18n.language)?.flag
+                      }`}
+                    ></span>
+                    {flags.find((f) => f.code === i18n.language)?.label}
+                  </MenuButton>
+                  <MenuList zIndex={500}>
+                    {flags.map((flag) => (
+                      <MenuItem
+                        onClick={() => {
+                          i18n.changeLanguage(flag.code)
+                        }}
+                      >
+                        <span className={` ${flag.flag}`} />
+                        {flag.label}
+                      </MenuItem>
+                    ))}
+                  </MenuList>
+                </>
+              )}
+            </Menu>
           </div>
           <Image
             boxSize={{ base: '80px', md: '200px' }}
