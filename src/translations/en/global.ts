@@ -56,6 +56,8 @@ export const enConfig: langConfig = {
     title: {
       title: 'Contact',
     },
+    curriculumButton: 'Resume',
+
     form: {
       name: 'Name',
       mail: 'Mail',

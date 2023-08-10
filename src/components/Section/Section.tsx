@@ -1,9 +1,16 @@
 import { FC, ReactNode } from 'react'
 
-type Props = { children: ReactNode; extraCss?: string }
-const Section: FC<Props> = ({ children, extraCss = 'bg-neutral-300' }) => {
+type Props = { children: ReactNode; extraCss?: string; sectionId?: string }
+const Section: FC<Props> = ({
+  children,
+  extraCss = 'bg-neutral-300',
+  sectionId,
+}) => {
   return (
-    <div className={`text-4xl font-bold tracking-wider p-4 ${extraCss}`}>
+    <div
+      id={sectionId}
+      className={`text-4xl font-bold tracking-wider p-4 ${extraCss}`}
+    >
       {children}
     </div>
   )

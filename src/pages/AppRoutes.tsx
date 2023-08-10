@@ -1,8 +1,8 @@
-import { createBrowserRouter, Outlet } from 'react-router-dom';
-import LayoutComponent from '../components/Layout/LayoutComponent';
-import { Contact } from './Contact';
-import Error404 from './Error404';
-import { Home } from './Home';
+import { createBrowserRouter, Outlet } from 'react-router-dom'
+import LayoutComponent from '../components/Layout/LayoutComponent'
+import { Contact } from './Contact'
+import Error404 from './Error404'
+import { Home } from './Home'
 
 const router = createBrowserRouter([
   {
@@ -17,16 +17,12 @@ const router = createBrowserRouter([
         path: '',
         element: <Home />,
       },
-      {
-        path: 'contact',
-        element: <Contact />,
-      },
     ],
   },
   {
     path: '*',
     element: <Error404 />,
   },
-]);
+])
 
-export default router;
+export default router

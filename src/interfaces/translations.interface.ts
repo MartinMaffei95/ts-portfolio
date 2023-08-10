@@ -39,7 +39,7 @@ export interface langConfig {
     paragraph3: ExtendedText
   }
   lastWorkSection: Section & { tasks: string }
-  contactSection: Section & { form: Form }
+  contactSection: Section & { form: Form; curriculumButton: string }
 }
 
 export type Language = 'es' | 'en'

@@ -16,7 +16,7 @@ const HeroComponent = () => {
   const { actualWidth } = useResize()
   return (
     <div
-      id="hero"
+      id="section-hero"
       className="bg-neutral-300 text-black h-full relative flex flex-col 
       justify-center gap-6 text-center overflow-hidden p-4
       md:flex-row md:items-center md:justify-around md:px-12 md:gap-

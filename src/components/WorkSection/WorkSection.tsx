@@ -9,7 +9,10 @@ const WorkSection = () => {
   const [translate, i18n] = useTranslation('global')
 
   return (
-    <Section extraCss="bg-neutral-900 text-neutral-100 flex flex-col gap-4 ">
+    <Section
+      sectionId="section-works"
+      extraCss="bg-neutral-900 text-neutral-100 flex flex-col gap-4 "
+    >
       <div className="flex gap-2 items-center">
         <Title title={translate('lastWorkSection.title.title')} />
         <SimpleBadge text={translate('lastWorkSection.title.badge')} />
