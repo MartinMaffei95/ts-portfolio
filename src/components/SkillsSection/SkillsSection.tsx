@@ -9,7 +9,10 @@ const SkillsSection = () => {
   const [translate] = useTranslation('global')
 
   return (
-    <Section extraCss="flex flex-col gap-4 bg-neutral-200">
+    <Section
+      sectionId="section-skills"
+      extraCss="flex flex-col gap-4 bg-neutral-200"
+    >
       <div className="flex  items-baseline gap-4">
         <Title title={translate('skillsSection.title.title')} />
       </div>

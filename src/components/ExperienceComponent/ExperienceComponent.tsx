@@ -16,7 +16,10 @@ const ExperienceComponent: FC<Props> = ({}) => {
   const [translate, i18n] = useTranslation('global')
 
   return (
-    <Section extraCss="bg-neutral-900 relative  min-h-screen text-neutral-100 gap-4 flex flex-col ">
+    <Section
+      sectionId="section-experience"
+      extraCss="bg-neutral-900 relative  min-h-screen text-neutral-100 gap-4 flex flex-col "
+    >
       <Image
         src={topSvg}
         className="absolute left-0 top-0 w-screen brightness-50  "

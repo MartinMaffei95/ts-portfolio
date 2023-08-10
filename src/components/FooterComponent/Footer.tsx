@@ -10,7 +10,10 @@ const Footer = () => {
   const [translate] = useTranslation('global')
 
   return (
-    <Section extraCss="bg-yellow-400 text-base flex flex-col gap-4 relative ">
+    <Section
+      sectionId="section-contact"
+      extraCss="bg-yellow-400 text-base flex flex-col gap-4 relative "
+    >
       <Title
         id="contact"
         firstLetterClassName=""
@@ -29,7 +32,7 @@ const Footer = () => {
             referrerPolicy="no-referrer"
             href="/pdf/MartinMaffeiCV.pdf"
           >
-            Curriculum
+            {translate('contactSection.curriculumButton')}
             <FaRegFilePdf />
           </Icon>
           <Icon

@@ -26,7 +26,6 @@ export const Home = () => {
           <Image className="w-full " src={waves} />
         </Hide>
       </div>
-      {/* <EducationComponent /> */}
       <SkillsSection />
       <div className="w-screen relative bg-neutral-200 rotate-180">
         <Show above="md">
