@@ -17,7 +17,7 @@ const SkillsSection = () => {
         <Title title={translate('skillsSection.title.title')} />
       </div>
       <div className="sm:flex flex-col ">
-        <section className="[&>p]:font-normal md:text-base text-sm [&>p]:leading-relaxed flex flex-col sm:basis-2/3 sm:px-12 text-justify pb-4">
+        <section className="[&>p]:font-normal md:text-base text-sm [&>p]:leading-relaxed flex flex-col sm:basis-2/3 sm:px-12  pb-4">
           <Highlight
             focus={translate('skillsSection.paragraph1.focus')}
             colored={translate('skillsSection.paragraph1.colored')}

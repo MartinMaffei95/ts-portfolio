@@ -18,7 +18,7 @@ const ExperienceComponent: FC<Props> = ({}) => {
   return (
     <Section
       sectionId="section-experience"
-      extraCss="bg-neutral-900 relative  min-h-screen text-neutral-100 gap-4 flex flex-col "
+      extraCss="bg-neutral-900 relative  min-h-screen text-neutral-100 gap-4 flex flex-col  "
     >
       <Image
         src={topSvg}
@@ -31,7 +31,7 @@ const ExperienceComponent: FC<Props> = ({}) => {
       </div>
       {experiences[i18n.language as Language]?.map((exp, index) => (
         <>
-          <article className="text-sm font-normal md:px-12 text-justify ">
+          <article className="text-sm font-normal md:px-12  ">
             <header className="flex flex-col gap-1">
               <h3 className="text-xl font-semibold">{exp?.position}</h3>
               <h4 className="text-base font-medium flex gap-1 items-baseline">

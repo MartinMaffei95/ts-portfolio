@@ -8,6 +8,7 @@ import {
   MenuButton,
   MenuItem,
   MenuList,
+  Show,
 } from '@chakra-ui/react'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import Icon from '../Icon/Icon'
@@ -49,7 +50,7 @@ export const Header = () => {
          [&>div]:border-t [&>div]:border-b 
          [&>div]:flex [&>div]:justify-center [&>div]:items-center [&>div]:md:justify-around "
         >
-          <div>
+          <div className="flex justify-around items-center gap-2">
             <a
               href="#contact"
               className="capitalize text-sm md:text-xl hover:text-neutral-500 hover:underline  duration-200"
@@ -60,26 +61,33 @@ export const Header = () => {
               {({ isOpen }) => (
                 <>
                   <MenuButton
+                    rounded={'full'}
                     isActive={isOpen}
                     as={Button}
                     rightIcon={
-                      <MdArrowDropDown
-                        className={`text-xl duration-150 ${
-                          isOpen ? 'rotate-180' : ''
-                        }`}
-                      />
+                      actualWidth >= 640 ? (
+                        <MdArrowDropDown
+                          className={`text-xl duration-150 ${
+                            isOpen ? 'rotate-180' : ''
+                          }`}
+                        />
+                      ) : undefined
                     }
                   >
                     <span
-                      className={` ${
+                      className={`flex items-center justify-center gap-2 sm:mr-2 ${
                         flags.find((f) => f.code === i18n.language)?.flag
                       }`}
                     ></span>
-                    {flags.find((f) => f.code === i18n.language)?.label}
+
+                    {actualWidth >= 640
+                      ? flags.find((f) => f.code === i18n.language)?.label
+                      : null}
                   </MenuButton>
                   <MenuList zIndex={500}>
                     {flags.map((flag) => (
                       <MenuItem
+                        gap={2}
                         onClick={() => {
                           i18n.changeLanguage(flag.code)
                         }}
