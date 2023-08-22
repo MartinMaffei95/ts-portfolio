@@ -31,7 +31,7 @@ const ExperienceComponent: FC<Props> = ({}) => {
       </div>
       {experiences[i18n.language as Language]?.map((exp, index) => (
         <>
-          <article className="text-sm font-normal md:px-12  ">
+          <article className="text-sm font-normal md:px-12 z-10 ">
             <header className="flex flex-col gap-1">
               <h3 className="text-xl font-semibold">{exp?.position}</h3>
               <h4 className="text-base font-medium flex gap-1 items-baseline">
